@@ -7,9 +7,11 @@
 	  $password =$_POST['password'];
 	  $occupation =$_POST['occupation'];
 	  $address =$_POST['address'];
+	  $province =$_POST['province'];
 	  $city =$_POST['city'];
 	  $nationality =$_POST['nationality'];
 	  $contact =$_POST['contact'];
+	  $telephone =$_POST['telephone'];
 	  $gender =$_POST['gender'];
 	  $bday =date("Y-m-d",strtotime($_POST['bday']));
 	  $date=date("Y-m-d");
@@ -30,8 +32,9 @@
  				}
 		else
 				{
-					mysqli_query($con,"INSERT INTO donor(donor_first,donor_middle,donor_last,donor_email,donor_password,donor_nationality,donor_occupation,donor_address,donor_city,donor_contact,donor_gender,donor_bday,donor_pic) 
-		VALUES('$first','$mi','$last','$email','$password','$nationality','$occupation','$address','$city','$contact','$gender','$bday','default.gif')")or die(mysqli_error($con));  
+
+					mysqli_query($con,"INSERT INTO donor(donor_first,donor_middle,donor_last,donor_email,donor_password,donor_nationality,donor_occupation,donor_address,donor_city,donor_province,donor_contact,donor_tel,donor_gender,donor_bday,donor_pic) 
+		VALUES('$first','$mi','$last','$email','$password','$nationality','$occupation','$address','$city','$province','$contact','$telephone','$gender','$bday','default.gif')")or die(mysqli_error($con));  
 	
 						echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
 						echo "<script>document.location='login.html';</script>";

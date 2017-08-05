@@ -40,7 +40,7 @@
 <!-- END SIDEBAR TOGGLER BUTTON -->
 
 <!-- BEGIN LOGIN -->
-<div class="content">
+<div class="content" style="width: 80%!important">
 	<!-- BEGIN REGISTRATION FORM -->
 	<form class="login-form" action="register.php" method="post">
 			<div class="form-title">
@@ -49,99 +49,145 @@
 		<p class="hint">
 			 Enter your personal details below:
 		</p>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">First Name</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="First Name" name="first"/>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">First Name</label>
+					<input class="form-control placeholder-no-fix" type="text" placeholder="First Name" name="first" required />
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Middle Name</label>
+					<input class="form-control placeholder-no-fix" type="text" placeholder="Middle Name" name="mi"/>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Last Name</label>
+					<input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="last" required/>
+				</div>
+			</div>
 		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Middle Name</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Middle Name" name="mi"/>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Birthday</label>
+					<input class="form-control form-control-inline input-medium date-picker" type="date" name="bday" required>
+					<span class="help-block">
+						Select birthday 
+					</span>
+				</div>
+			</div>
+			<div class="col-md-4">
+					<div class="md-radio-inline">
+						<div class="md-radio">
+							<input type="radio" id="radio6" name="gender" class="md-radiobtn" value="male">
+							<label for="radio6">
+							<span></span>
+							<span class="check"></span>
+							<span class="box"></span>
+							Male </label>
+						</div>
+						<div class="md-radio">
+							<input type="radio" id="radio7" class="md-radiobtn" checked="" name="gender" value="female">
+							<label for="radio7">
+							<span></span>
+							<span class="check"></span>
+							<span class="box"></span>
+							Female </label>
+						</div>
+					</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Contact #</label>
+					<input class="form-control placeholder-no-fix" type="text" placeholder="Contact #" name="contact"/>
+				</div>
+			</div>
 		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Last Name</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="last"/>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Telephone #</label>
+					<input class="form-control placeholder-no-fix" type="text" placeholder="Telephone #" name="telephone"/>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Occupation</label>
+					<input class="form-control placeholder-no-fix" type="text" placeholder="Occupation" name="occupation" required/>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Nationality</label>
+						
+					<select class="form-control placeholder-no-fix select2me" data-placeholder="Select Nationality" name="nationality" required>
+						<option value="" disabled selected>Select your Nationality</option>
+						<?php													
+							include('includes/dbcon.php');
+							$query1=mysqli_query($con,"select * from nationality order by nationality")or die(mysqli_error());
+							 while($row=mysqli_fetch_array($query1)){
+							?>
+							<option><?php echo $row['nationality'];?></option>
+							<?php }?>
+					</select>
+				</div>
+			</div>
 		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Birthday</label>
-			<input class="form-control form-control-inline input-medium date-picker" type="date" name="bday">
-			<span class="help-block">
-				Select birthday 
-			</span>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Address</label>
+					<input class="form-control placeholder-no-fix" type="text" placeholder="Prk/Street/Brgy/Block" name="address" required/>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">City/Town</label>
+						<select class="form-control placeholder-no-fix select2me" data-placeholder="Select..." name="city" required>
+							<?php		
+								include('includes/dbcon.php');
+								$query2=mysqli_query($con,"select * from city order by city_name")or die(mysqli_error());
+									while($row=mysqli_fetch_array($query2)){
+							?>
+									<option><?php echo $row['city_name'];?></option>
+							<?php }?>
+						</select>
+				</div>
+			</div>
+			<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label visible-ie8 visible-ie9">Province</label>
+							<input class="form-control placeholder-no-fix" type="text" placeholder="Province" name="province" required/>
+					</div>
+			</div>
 		</div>
-		<div class="md-radio-inline">
-											<div class="md-radio">
-												<input type="radio" id="radio6" name="gender" class="md-radiobtn" value="male">
-												<label for="radio6">
-												<span></span>
-												<span class="check"></span>
-												<span class="box"></span>
-												Male </label>
-											</div>
-											<div class="md-radio">
-												<input type="radio" id="radio7" class="md-radiobtn" checked="" name="gender" value="female">
-												<label for="radio7">
-												<span></span>
-												<span class="check"></span>
-												<span class="box"></span>
-												Female </label>
-											</div>
-											
-										</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Contact #</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Contact #" name="contact"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Occupation</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Occupation" name="occupation"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Nationality</label>
-				
-			<select class="form-control placeholder-no-fix select2me" data-placeholder="Select Nationality" name="city">
-				<option value="" disabled selected>Select your Nationality</option>
-				<?php													
-					include('includes/dbcon.php');
-					$query1=mysqli_query($con,"select * from nationality order by nationality")or die(mysqli_error());
-					 while($row=mysqli_fetch_array($query1)){
-					?>
-					<option><?php echo $row['nationality'];?></option>
-					<?php }?>
-			</select>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Address</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Prk/Street/Brgy/Block" name="address"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">City/Town</label>
-											<select class="form-control placeholder-no-fix select2me" data-placeholder="Select..." name="city">
-													<?php		
-													
-													include('includes/dbcon.php');
-														$query2=mysqli_query($con,"select * from city order by city_name")or die(mysqli_error());
-														    while($row=mysqli_fetch_array($query2)){
-																	?>
-																<option><?php echo $row['city_name'];?></option>
-													<?php }?>
-												</select>
-		</div>
-		<div class="form-group">
-			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-			<label class="control-label visible-ie8 visible-ie9">Email</label>
-			<input class="form-control placeholder-no-fix" type="email" placeholder="Email" name="email"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Password</label>
-			<input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
-			<input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword"/>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+					<label class="control-label visible-ie8 visible-ie9">Email</label>
+					<input class="form-control placeholder-no-fix" type="email" placeholder="Email" name="email" required/>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Password</label>
+					<input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password" required/>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
+					<input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" required/>
+				</div>
+			</div>
 		</div>
 		<div class="form-group margin-top-20 margin-bottom-20">
 			<label class="check">
-			<input type="checkbox" name="tnc"/>
+			<input type="checkbox" name="tnc" required/>
 			<span class="loginblue-font">I agree to the </span>
 			<a href="javascript:;" class="loginblue-link">Terms of Service</a>
 			<span class="loginblue-font">and</span>
@@ -152,7 +198,7 @@
 		</div>
 		<div class="form-actions">
 			<button type="button" id="register-back-btn" class="btn btn-default">Back</button>
-			<button type="submit" id="register-submit-btn" name="register" class="btn btn-primary uppercase pull-right">Submit</button>
+			<button type="submit" id="register-submit-btn" name="register" class="btn btn-success uppercase pull-right">Submit</button>
 		</div>
 	
 	</form>
