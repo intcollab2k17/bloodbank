@@ -22,6 +22,19 @@
                 <li><a href="users.php"><i class="icon-android"></i> Users</a></li>
                 <li><a href="schedule.php"><i class="icon-calendar"></i> Schedule</a></li>
                 <li><a href="inventory.php"><i class="icon-calendar"></i> Inventory</a></li>
+                <li class="panel">
+                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#pagesr-nav">
+                        <i class="icon-wrench"></i> Maintenance
+                    </a>
+                    <ul class="collapse" id="pagesr-nav">
+                        <li><a href="nationality.php"><i class="icon-angle-right"></i> Nationality </a></li>
+                       <!--  <li><a href="pages_timeline.html"><i class="icon-angle-right"></i> Timeline </a></li>
+                        <li><a href="pages_social.html"><i class="icon-angle-right"></i> Social </a></li>
+                        <li><a href="pages_pricing.html"><i class="icon-angle-right"></i> Pricing </a></li>
+                        <li><a href="pages_offline.html"><i class="icon-angle-right"></i> Offline </a></li>
+                        <li><a href="pages_uc.html"><i class="icon-angle-right"></i> Under Construction </a></li> -->
+                    </ul>
+                </li>
             </ul>
 
         </div>
