@@ -54,7 +54,7 @@
                                     <tbody>
                                     <?php   
 
-                                        $query1=mysqli_query($con,"select * from survey natural join donor natural join program  where survey_status='0' group by donor_id,survey_date ORDER BY survey_id ASC")or die(mysqli_error($con));
+                                        $query1=mysqli_query($con,"select * from donation natural join donor natural join program natural join survey  where survey_status='Pending'")or die(mysqli_error($con));
                                         while ($row=mysqli_fetch_array($query1)){
                                             $id=$row['donor_id'];
                                             $sid=$row['survey_id'];                                       

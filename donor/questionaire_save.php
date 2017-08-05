@@ -5,9 +5,14 @@ include('../includes/dbcon.php');
 	$id=$_SESSION['id'];
 	$qid = $_POST['qid'];
 	$program = $_POST['program'];
-	$date = date("Y-m-d H:i:s");
-	  
-	mysqli_query($con,"INSERT INTO survey(donor_id,survey_date,program_id) VALUES('$id','$date','$program')")or die(mysqli_error($con));
+	$date = date("Y-m-d");
+	$time = date("H:i:s");
+	 
+	mysqli_query($con,"INSERT INTO donation(donor_id,program_id,donation_date,donation_time) VALUES('$id','$program','$date','$time')")or die(mysqli_error($con));
+	  	$did=mysqli_insert_id($con);
+
+	mysqli_query($con,"INSERT INTO survey(donation_id,survey_date,survey_status) VALUES('$did','$date','Pending')")or die(mysqli_error($con));
+
 		$survey_id=mysqli_insert_id($con);
 
 		foreach($qid as $val) 
