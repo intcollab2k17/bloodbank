@@ -60,49 +60,27 @@
 			<input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"/>
 		</div>
 		<div class="form-actions">
-			<button type="submit" name="login" class="btn btn-primary btn-block uppercase">Login</button>
+			<button type="submit" name="login" class="btn btn-success btn-block uppercase">Login</button>
 		</div>
 		<div class="form-actions">
-			<div class="pull-left">
-				<label class="rememberme check">
-				<input type="checkbox" name="remember" value="1"/>Remember me </label>
-			</div>
 			<div class="pull-right forget-password-block">
 				<a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
 			</div>
 		</div>
-		<div class="login-options">
-			<h4 class="pull-left">Or login with</h4>
-			<ul class="social-icons pull-right">
-				<li>
-					<a class="social-icon-color facebook" data-original-title="facebook" href="javascript:;"></a>
-				</li>
-				<li>
-					<a class="social-icon-color twitter" data-original-title="Twitter" href="javascript:;"></a>
-				</li>
-				<li>
-					<a class="social-icon-color googleplus" data-original-title="Goole Plus" href="javascript:;"></a>
-				</li>
-				<li>
-					<a class="social-icon-color linkedin" data-original-title="Linkedin" href="javascript:;"></a>
-				</li>
-			</ul>
-		</div>
-		
 	</form>
 	<!-- END LOGIN FORM -->
 	<!-- BEGIN FORGOT PASSWORD FORM -->
-	<form class="forget-form" action="index.html" method="post">
+	<form class="forget-form" action="reset.php" method="post">
 		<div class="form-title">
 			<span class="form-title">Forget Password ?</span>
 			<span class="form-subtitle">Enter your e-mail to reset it.</span>
 		</div>
 		<div class="form-group">
-			<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
+			<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" required/>
 		</div>
 		<div class="form-actions">
 			<button type="button" id="back-btn" class="btn btn-default">Back</button>
-			<button type="submit" name="login" class="btn btn-primary uppercase pull-right">Submit</button>
+			<button type="submit" name="login" class="btn btn-success uppercase pull-right">Reset</button>
 		</div>
 	</form>
 	<!-- END FORGOT PASSWORD FORM -->
