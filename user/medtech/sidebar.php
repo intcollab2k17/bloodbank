@@ -188,6 +188,7 @@
 
 
                 <li><a href="donors_list.php"><i class="icon-calendar"></i> Donors List </a></li>
+                <li><a href="inventory_list.php"><i class="icon-wrench"></i> Inventory </a></li>
 
             </ul>
 
