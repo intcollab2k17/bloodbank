@@ -15,6 +15,7 @@
 												<div class="form-group">
 													<label>Blood Pressure</label>
 													<input type="text" value="___/___" data-mask="___/___" name = "blood_pressure" class="form-control"/>
+													
 												</div> 
 												<div class="form-group">
 													<label>Pulse Rate</label>
