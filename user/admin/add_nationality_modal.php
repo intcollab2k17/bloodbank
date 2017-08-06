@@ -6,7 +6,7 @@
                                             <h4 class="modal-title" id="H2">Modal Form</h4>
                                         </div>
                                         <div class="modal-body">
-                                        <form method = "POST" action = "add_user.php" enctype ="multipart/form-data">
+                                        <form method = "POST" action = "add_nationality.php" enctype ="multipart/form-data">
 												<div class="form-group">
 													<label>Nationality</label>
 													<input class="form-control" name = "nationality" Placeholder = "Create a username.." required = "true"/>													

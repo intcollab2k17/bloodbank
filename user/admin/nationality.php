@@ -65,7 +65,7 @@
           <!-- RIGHT STRIP  SECTION -->
         <div id="right">
             <div class="well well-small">
-                <button class = "btn btn-success btn-block" data-toggle="modal" data-target="#uiModal"><i class = "icon-plus"></i> Add User</button>
+                <button class = "btn btn-success btn-block" data-toggle="modal" data-target="#uiModal"><i class = "icon-plus"></i> Add Nationality</button>
             </div>
            <?php include 'add_nationality_modal.php';?> 
         </div>
