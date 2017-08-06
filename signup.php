@@ -97,7 +97,17 @@
 		</div>
 		<div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">Nationality</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Nationality" name="nationality"/>
+				
+			<select class="form-control placeholder-no-fix select2me" data-placeholder="Select Nationality" name="city">
+				<option value="" disabled selected>Select your Nationality</option>
+				<?php													
+					include('includes/dbcon.php');
+					$query1=mysqli_query($con,"select * from nationality order by nationality")or die(mysqli_error());
+					 while($row=mysqli_fetch_array($query1)){
+					?>
+					<option><?php echo $row['nationality'];?></option>
+					<?php }?>
+			</select>
 		</div>
 		<div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">Address</label>
@@ -105,7 +115,7 @@
 		</div>
 		<div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">City/Town</label>
-			<select class="form-control placeholder-no-fix select2me" data-placeholder="Select..." name="city">
+											<select class="form-control placeholder-no-fix select2me" data-placeholder="Select..." name="city">
 													<?php		
 													
 													include('includes/dbcon.php');
