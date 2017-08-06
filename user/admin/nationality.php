@@ -31,29 +31,21 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Full Name</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
-                                            <th>User Type</th>
-                                            <th>Action</th>
+                                            <th>Nationality</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
 									<?php	
 									include 'dbcon.php';								
-										$query1=mysqli_query($con,"select * from user ORDER BY user_id ASC")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select * from nationality ORDER BY nationality_id ASC")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
-											$id=$row['user_id'];
+											$nationality_id=$row['nationality_id'];
 											
 									?>  
                                         <tr class="odd gradeX">
-                                            <td><?php echo $row['user_first']. " " .$row['user_middle']. " " .$row['user_last'];?></td>
-                                            <td><?php echo $row['username'];?></td>
-                                            <td class = "center">*****</td>
-                                            <td class="center"><?php echo $row['user_type'];?></td>
-                                            <td class="center">
-												<a href="#update<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
-											</td>
+                                            <td><?=$row['nationality']?></td>
+												
                                         </tr> 
 										<?php }?>									
                                     </tbody>

@@ -8,9 +8,8 @@
                                         <div class="modal-body">
                                         <form method = "POST" action = "add_user.php" enctype ="multipart/form-data">
 												<div class="form-group">
-													<label>Username</label>
-													<input class="form-control" name = "username" Placeholder = "Create a username.." required = "true"/>
-													<p class="help-block">This username accoun is used for your log in </p>
+													<label>Nationality</label>
+													<input class="form-control" name = "nationality" Placeholder = "Create a username.." required = "true"/>													
 												</div>
                                         </div>
                                         <div class="modal-footer">
