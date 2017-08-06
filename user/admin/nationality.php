@@ -86,6 +86,9 @@
     <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <!-- END GLOBAL SCRIPTS -->
 	<?php include 'script.php';?>
+
+
+    $("#date").mask("99/99/9999");
 </body>
     <!-- END BODY-->
     
