@@ -96,8 +96,7 @@
 			<input class="form-control placeholder-no-fix" type="text" placeholder="Occupation" name="occupation"/>
 		</div>
 		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Nationality</label>
-				
+			<label class="control-label visible-ie8 visible-ie9">Nationality</label>				
 			<select class="form-control placeholder-no-fix select2me" data-placeholder="Select Nationality" name="city">
 				<option value="" disabled selected>Select your Nationality</option>
 				<?php													
