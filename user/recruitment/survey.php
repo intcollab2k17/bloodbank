@@ -47,19 +47,17 @@ include 'header.php';
                                 </div>
                             </div>
                             <div class="portlet-body">
-                                <form method="post" action="approve.php">
-                                <input type="hidden" name="id" value="<?php $id=$_REQUEST['id']; echo $id;?>">
                                 <div class="row">
                                     <div class="form-group form-md-line-input col-md-1">
                                         <label class="col-md-2 control-label" for="form_control_1"></label>
                                         <div class="col-md-10">
-                                             <button class="btn btn-success" type="submit" name="approve"> Approve </button>
+                                             <a href="approve.php?id=<?php $id=$_REQUEST['id']; echo $id;?>" class="btn btn-success" type="submit" name="approve"> Approve </a>
                                         </div>
                                     </div>
                                     <div class="form-group form-md-line-input col-md-1">
                                         <label class="col-md-2 control-label" for="form_control_1"></label>
                                         <div class="col-md-10">
-                                             <button class="btn btn-danger" type="submit" name="decline"> Decline </button>
+                                             <a href="reject.php?id=<?php $id=$_REQUEST['id']; echo $id;?>" class="btn btn-danger" type="submit" name="decline"> Decline </a>
                                         </div>
                                     </div>
                                     <div class="form-group form-md-line-input col-md-1">
@@ -70,7 +68,7 @@ include 'header.php';
                                     </div>
                                 </div>
                                 
-                          </form>                  
+                        
                                 <table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
                                 <tbody>
                                 <input type="hidden" name="id" value="<?php echo $_REQUEST['id'];?>">
@@ -95,7 +93,7 @@ include 'header.php';
                                 </tr>
 
 <?php
-        $query1=mysqli_query($con,"select * from question natural join answer natural join survey where category_id='$cid' and survey_id='$id' and survey_status='0'")or die(mysqli_error($con));
+        $query1=mysqli_query($con,"select * from question natural join answer natural join survey where category_id='$cid' and survey_id='$id' and survey_status='Pending'")or die(mysqli_error($con));
         
             while($row1=mysqli_fetch_array($query1))
             {

@@ -58,7 +58,15 @@
                                             <td><?php echo $row['program_address'];?></td>
                                             <td><?php echo date("M d, Y",strtotime($row['program_date']));?></td>
                                             <td><?php echo date("h:i a",strtotime($row['program_time']));?></td>
-                                            <td class="center"><?php //echo $row['agency_name'];?></td>
+                                            <td class="center">
+                                            <?php 
+                                            $query2=mysqli_query($con,"select * from linkages natural join agency  where program_id='$id'")or die(mysqli_error($con));
+                                        while ($row2=mysqli_fetch_array($query2)){
+                                           
+                                            echo $row2['agency_name'].",";}
+                                            ?>
+                                                
+                                            </td>
                                             <td class="center">
 												<a href="#update<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
 											</td>

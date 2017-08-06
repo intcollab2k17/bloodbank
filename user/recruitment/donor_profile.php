@@ -97,7 +97,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Home Address</td>
-                                                        <th colspan="3"><?php echo $row['donor_address'].", ".$row['city_name'];?></th>
+                                                        <th colspan="3"><?php echo $row['donor_address'].", ".$row['donor_city'];?></th>
                                                         <td>Zip Code</td>
                                                         <th><?php echo $row['donor_zipcode'];?></th>
                                                     </tr>
@@ -113,12 +113,12 @@
                                                     </tr>
                                                     <tr>
 <?php   
-    $querycount=mysqli_query($con,"select COUNT(*) as count from physical_exam where donor_id='$donor_id'")or die(mysqli_error($con));
+    $querycount=mysqli_query($con,"select COUNT(*) as count from donation")or die(mysqli_error($con));
         $rowcount=mysqli_fetch_array($querycount);
 ?>                                                      
                                                     
 <?php   
-    $query2=mysqli_query($con,"select donation_date from physical_exam where donor_id='$donor_id' order by donation_date desc limit 0,1")or die(mysqli_error($con));
+    $query2=mysqli_query($con,"select donation_date from donation")or die(mysqli_error($con));
         $row2=mysqli_fetch_array($query2);
 ?>                                                                                                          
                                                     
@@ -132,178 +132,13 @@
                                 </div>
                                 <div class="tab-pane fade" id="profile-pills">
     
-<?php
-    $query=mysqli_query($con,"select * from survey where donor_id ='$donor_id' order by survey_date desc")or die(mysqli_error($con));
-            $i=1;
-            while($row=mysqli_fetch_array($query))
-            {
-                if ($row['survey_status']==1)
-                {
-                    $status="Approved";
-                    $label="success";
-                }
-                if ($row['survey_status']==2)
-                {
-                    $status="Declined";
-                    $label="danger";
-                }
-                if ($row['survey_status']==0)
-                {
-                    $status="Pending";
-                    $label="warning";
-                }
-            
-?>  
-                    <div class="panel-group" id="accordion">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $row['survey_id'];?>" class=""><?php echo date("M d, Y",strtotime($row['survey_date']));?></a>
-                                            <span class="pull-right label label-<?php echo $label;?>"><?php echo $status;?></span>
-                                        </h4>
-                                    </div>
-                                    <div id="collapse<?php echo $row['survey_id'];?>" class="panel-collapse collapse" style="height: auto;">
-                                        <div class="panel-body">
-                                            <table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
-                                <tbody>
-                           
-
-<?php
-
-    $queryc=mysqli_query($con,"select * from category order by category_id")or die(mysqli_error($con));
-            $i=1;
-            while($rowc=mysqli_fetch_array($queryc))
-            {
-                $cid=$rowc['category_id'];
-            
-?>  
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="2">
-                                         <?php echo $rowc['category'];?>
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         Answer
-                                    </th>
-                                </tr>
-
-<?php
-        $query1=mysqli_query($con,"select * from question natural join answer natural join survey where category_id='$cid' and donor_id='$donor_id'")or die(mysqli_error($con));
-        
-            while($row1=mysqli_fetch_array($query1))
-            {
-
-            
-?>      <input type="hidden" name="qid[]" value="<?php echo $qid;?>">
-                                <tr role="row" class="even">
-                                    <td class="sorting_1">
-                                         <?php echo $i;?>
-                                    </td>
-                                    <td>
-                                         <?php echo $row1['question'];?>
-                                    </td>
-                                    <td>
-                                         <?php echo $row1['answer'];?>
-                                    </td>
-                                </tr>                                   
-<?php $i++;}}?>
-                                
-                                
-                                </tbody>
-                                </table>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-<?php $i++;}?>
-                                
+                                      <?php include('questionaire.php');?>  
                                 </div>
                                 <div class="tab-pane fade" id="messages-pills">
-                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
-                                <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="2">
-                                         Donation Date
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         Volume
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         Weight
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-<?php
-    $query=mysqli_query($con,"select * from physical_exam where donor_id ='$donor_id' order by donation_date desc")or die(mysqli_error($con));
-            $i=1;
-            while($row=mysqli_fetch_array($query))
-            {
-            
-?>  
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="2">
-                                         <?php echo date("M d, Y",strtotime($row['donation_date']));?>
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         <?php echo $row['volume'];?> mL
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         <?php echo $row['weight'];?> kgs
-                                    </th>
-                                </tr>
-<?php $i++;}?>
-                                
-                                
-                                </tbody>
-                                </table>
+                                      <?php include('history.php');?>     
                                 </div>
                                 <div class="tab-pane fade" id="settings-pills">
-                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="" role="grid" aria-describedby="sample_2_info">
-                                <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="2">
-                                         Booking Date
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         Time
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         Program Name
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-<?php
-    
-    $query=mysqli_query($con,"select * from booking where donor_id ='$donor_id' order by booking_date desc")or die(mysqli_error($con));
-            $i=1;
-            while($row=mysqli_fetch_array($query))
-            {
-                if ($row['status']=='0')
-                    $status="Walk-in";
-                else
-                    $status=$row['program_name'];
-            
-?>  
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="2">
-                                         <?php echo date("M d, Y",strtotime($row['booking_date']));?>
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         <?php echo date("h:i A",strtotime($row['booking_time']));?>
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="sample_2" rowspan="1" colspan="1">
-                                         <?php echo $status;;?>
-                                    </th>
-                                    
-                                </tr>
-<?php $i++;}?>
-                                
-                                
-                                </tbody>
-                                </table>
+                                    <?php include('booking.php');?>     
                                 </div>
                             </div>
                         </div>
