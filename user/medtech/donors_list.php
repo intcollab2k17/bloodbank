@@ -49,15 +49,15 @@
                                     <tbody>
 									<?php	
 									//include 'dbcon.php';								
-										$query1=mysqli_query($con,"select * from physical_exam LEFT JOIN donor ON donor.donor_id = physical_exam.donor_id WHERE physical_exam.exam_status ='1'")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select * from donation natural join donor")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
-											$id=$row['exam_id'];										
+											
 									?>  
                                         <tr class="odd gradeX">
                                             <td><?php echo $row['donor_first'];?></td>
                                             <td><?php echo $row['donor_middle'];?></td>
                                             <td><?php echo $row['donor_last'];?></td>
-											<td><a href = "view_donor_exam.php?exam_id=<?php echo $row['exam_id'];?>">View record</a></td>
+											<td><a href = "print.php?id=<?php echo $row['donation_id'];?>">View record</a></td>
                                         </tr> 
 									
 									

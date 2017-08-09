@@ -4,7 +4,7 @@
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Login Options - Login Form 2</title>
+<title>Bloodbank | Signup </title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -33,7 +33,7 @@
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="login">
+<body class="login" style="background-color: #fff;color: #000!important">
 <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 <div class="menu-toggler sidebar-toggler">
 </div>
@@ -44,12 +44,12 @@
 	<!-- BEGIN REGISTRATION FORM -->
 	<form class="login-form" action="register.php" method="post">
 			<div class="form-title">
-			<span class="form-title">Sign Up</span>
+			<span class="form-title" style="color: #000!important">Sign Up</span>
 		</div>
-		<p class="hint">
+		<p class="hint" style="color: #000!important">
 			 Enter your personal details below:
 		</p>
-<<<<<<< HEAD
+
 		<div class="row">
 			<div class="col-md-4">
 				<div class="form-group">
@@ -69,71 +69,8 @@
 					<input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="last" required/>
 				</div>
 			</div>
-=======
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">First Name</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="First Name" name="first"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Middle Name</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Middle Name" name="mi"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Last Name</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="last"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Birthday</label>
-			<input class="form-control form-control-inline input-medium date-picker" type="date" name="bday">
-			<span class="help-block">
-				Select birthday 
-			</span>
-		</div>
-		<div class="md-radio-inline">
-											<div class="md-radio">
-												<input type="radio" id="radio6" name="gender" class="md-radiobtn" value="male">
-												<label for="radio6">
-												<span></span>
-												<span class="check"></span>
-												<span class="box"></span>
-												Male </label>
-											</div>
-											<div class="md-radio">
-												<input type="radio" id="radio7" class="md-radiobtn" checked="" name="gender" value="female">
-												<label for="radio7">
-												<span></span>
-												<span class="check"></span>
-												<span class="box"></span>
-												Female </label>
-											</div>
-											
-										</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Contact #</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Contact #" name="contact"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Occupation</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Occupation" name="occupation"/>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Nationality</label>				
-			<select class="form-control placeholder-no-fix select2me" data-placeholder="Select Nationality" name="city">
-				<option value="" disabled selected>Select your Nationality</option>
-				<?php													
-					include('includes/dbcon.php');
-					$query1=mysqli_query($con,"select * from nationality order by nationality")or die(mysqli_error());
-					 while($row=mysqli_fetch_array($query1)){
-					?>
-					<option><?php echo $row['nationality'];?></option>
-					<?php }?>
-			</select>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Address</label>
-			<input class="form-control placeholder-no-fix" type="text" placeholder="Prk/Street/Brgy/Block" name="address"/>
->>>>>>> e2dbec4ac264d0d1119836bf86fcb4af7785d127
-		</div>
+
+		</div>	
 		<div class="row">
 			<div class="col-md-4">
 				<div class="form-group">
@@ -202,6 +139,28 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-12">
+				<div class="md-radio-inline">Preferred Mailing Address 
+						<div class="md-radio">
+							<input type="radio" id="radio6" name="preferred" class="md-radiobtn" value="Home">
+							<label for="radio6">
+							<span></span>
+							<span class="check"></span>
+							<span class="box"></span>
+							Home </label>
+						</div>
+						<div class="md-radio">
+							<input type="radio" id="radio7" class="md-radiobtn" name="preferred" value="Office">
+							<label for="radio7">
+							<span></span>
+							<span class="check"></span>
+							<span class="box"></span>
+							Office </label>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-4">
 				<div class="form-group">
 					<label class="control-label visible-ie8 visible-ie9">Address</label>
@@ -250,13 +209,26 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Donor Type</label>
+						
+					<select class="form-control placeholder-no-fix select2me" data-placeholder="Select Donor Type" name="type" required>
+						<option value="" disabled selected>Select Donor Type</option>
+							<option>Volunteer</option>
+							<option>Others</option>
+					</select>
+				</div>
+			</div>
+		</div>
 		<div class="form-group margin-top-20 margin-bottom-20">
 			<label class="check">
 			<input type="checkbox" name="tnc" required/>
-			<span class="loginblue-font">I agree to the </span>
-			<a href="javascript:;" class="loginblue-link">Terms of Service</a>
-			<span class="loginblue-font">and</span>
-			<a href="javascript:;" class="loginblue-link">Privacy Policy </a>
+			<span class="loginblue-font" style="color: #000!important">I agree to the </span>
+			<a href="javascript:;" class="loginblue-link" style="color: #000!important">Terms of Service</a>
+			<span class="loginblue-font" style="color: #000!important">and</span>
+			<a href="javascript:;" class="loginblue-link" style="color: #000!important">Privacy Policy </a>
 			</label>
 			<div id="register_tnc_error">
 			</div>

@@ -1,4 +1,4 @@
-<div class="modal fade" id="exam<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="exam<?php echo $did;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -8,7 +8,7 @@
                                         <div class="modal-body">
                                         <form method = "POST" action = "update_exam.php" enctype ="multipart/form-data">
 												<div class="form-group">
-												<input type = "hidden" name = "exam_id" value = "<?php echo $id;?>">
+												<input type = "hidden" name = "did" value = "<?php echo $did;?>">
 													<label>Blood Bag</label>
 													<select name = "blood_bag_type" class = "form-control">
 														<option></option>
@@ -39,12 +39,8 @@
 												</div>
 												<div class="form-group">
 													<label>Hematocrit</label>
-													<input type  = "text" class="form-control" name = "volume" Placeholder = "hematocrit" required = "true"/>
+													<input type  = "text" class="form-control" name = "hematocrit" Placeholder = "hematocrit" required = "true"/>
 												</div>	
-												<div class="form-group">
-													<label>Donation Date</label>
-													<input type  = "date" class="form-control" name = "donation_date" id = "datepicker" Placeholder = "hematocrit" required = "true"/>
-												</div>
 												<div class="form-group">
 													<label>Expiry</label>
 													<input type  = "date" class="form-control" name = "expiry" id = "datepicker" Placeholder = "hematocrit" required = "true"/>

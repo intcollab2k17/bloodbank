@@ -1,4 +1,4 @@
-<div class="modal fade" id="exam<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="exam<?php echo $did;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -8,7 +8,7 @@
                                         <div class="modal-body">
                                         <form method = "POST" action = "add_donor_exam.php" enctype ="multipart/form-data">
 												<div class="form-group">
-												<input type = "hidden" name = "donor_id" value = "<?php echo $id;?>">
+												<input type = "hidden" name = "did" value = "<?php echo $did;?>">
 													<label>Weight</label>
 													<input class="form-inline form-control" name = "weight" Placeholder = "kgs." required = "true"/>												
 												</div>												
@@ -58,6 +58,13 @@
 												<div class="form-group">
 													<label>Reasons for Deferral</label>
 													<input  class="form-control" name = "reasons_for_deferral" Placeholder = "Reason for Deferral"/>
+												</div>
+												<div class="form-group">
+													<label>Method of Collection</label>
+													<select name = "method" class = "form-control">
+														<option>Conventional</option>
+														<option>Pheresis</option>
+													</select>
 												</div>									
                                         </div>
                                         <div class="modal-footer">

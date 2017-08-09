@@ -157,7 +157,7 @@
             <div class="well text-center">
                 <a class="quick-btn" href="#">
                     <i class="icon-tint icon-5x text-red"></i>
-                        <span> # Donation/s</span>
+                        <span> # of Donation/s</span>
                         <span class="label label-danger icon-2x" style="margin-right: -20px">
                         <?php echo $rowcount['count'];?></span>
                 </a>
@@ -165,7 +165,7 @@
             <div class="well text-center">
                 <a class="quick-btn" href="#">
                     <i class="icon-calendar icon-4x text-green"></i><br><br>
-                        <span class="btn btn-warning btn-block"><?php echo date("M d, Y",strtotime($row2['donation_date']));?></span>
+                       Last Date of Donation <br><?php echo date("M d, Y",strtotime($row2['donation_date']));?>
                 </a>
             </div>
         </div>

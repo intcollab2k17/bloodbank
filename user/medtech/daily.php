@@ -27,41 +27,53 @@
 
             <div class="inner" style="width: 120%">
                 <div class="row">
+                    <form method="post" action="update.php">
                     <div class="col-md-12">
                         <h2>Donor Information</h2>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Donor List
+                            <div class="form-group col-md-6">
+                                <h3>Daily Donors</h3>
+                            </div>
+
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th>First Name</th>
                                             <th>Middle Name</th>
                                             <th>Last Name</th>
+                                            <th>Contact #</th>
+                                            <th>Program Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php   
-
-                                        $query1=mysqli_query($con,"select * from donation natural join survey natural join donor natural join program  where survey_status='Accepted' and donation_id NOT IN(select donation_id from physical_exam) ORDER BY survey_id ASC")or die(mysqli_error($con));
+                                        $today=date('Y-m-d');
+                                       
+                                        $query1=mysqli_query($con,"select * from donation natural join donor natural join program natural join survey  where survey_status<>'Pending' and donation_date='$today'")or die(mysqli_error($con));
                                         while ($row=mysqli_fetch_array($query1)){
-                                            $did=$row['donation_id'];
+                                            $id=$row['donation_id'];
                                             $sid=$row['survey_id'];                                       
 
                                     ?>  
                                         <tr class="odd gradeX">
+                                            <td><input type="checkbox" value="<?php echo $row['donor_id'];?>" name="donor_id[]"></td>  
                                             <td><?php echo $row['donor_first'];?></td>  
                                             <td><?php echo $row['donor_middle'];?></td>  
                                             <td><?php echo $row['donor_last'];?></td>  
+                                            <td><?php echo $row['donor_contact'];?></td>  
+                                        
+                                            <td><?php echo $row['program'];?></td>  
                                             <td class="center">
-                                                <a href="#exam<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#exam<?php echo $did;?>"><i class = "fa fa-pencil"></i>Fill Up Exam</a>
-                                                <a href="survey.php?id=<?php echo $did;?>" class="btn btn-primary"><i class = "fa fa-pencil"></i>View Survey Questionaire</a>
+                                                <a href="print.php?id=<?php echo $id;?>" class="btn btn-primary"><i class = "fa fa-pencil"></i>View Donation Record</a>
                                             </td>
                                         </tr> 
+                                        </form>
                                         <?php include 'make_exam_modal.php';?>
                                         <?php }?>                                   
                                     </tbody>
@@ -86,58 +98,12 @@
 
    <!-- FOOTER -->
     <div id="footer">
-        <p>&copy;  binarytheme &nbsp;2014 &nbsp;</p>
+        <?php include('footer.php');?>
     </div>
     <!--END FOOTER -->
      <!-- GLOBAL SCRIPTS -->
-    <script src="../assets/plugins/jquery-2.0.3.min.js"></script>
-     <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <script src="../assets/js/input_mask.js"></script>
     <!-- END GLOBAL SCRIPTS -->
     <?php include 'script.php';?>
-
-    <script type="text/javascript">
-      Array.prototype.forEach.call(document.body.querySelectorAll("*[data-mask]"), applyDataMask);
-
-function applyDataMask(field) {
-    var mask = field.dataset.mask.split('');
-    
-    // For now, this just strips everything that's not a number
-    function stripMask(maskedData) {
-        function isDigit(char) {
-            return /\d/.test(char);
-        }
-        return maskedData.split('').filter(isDigit);
-    }
-    
-    // Replace `_` characters with characters from `data`
-    function applyMask(data) {
-        return mask.map(function(char) {
-            if (char != '_') return char;
-            if (data.length == 0) return char;
-            return data.shift();
-        }).join('')
-    }
-    
-    function reapplyMask(data) {
-        return applyMask(stripMask(data));
-    }
-    
-    function changed() {   
-        var oldStart = field.selectionStart;
-        var oldEnd = field.selectionEnd;
-        
-        field.value = reapplyMask(field.value);
-        
-        field.selectionStart = oldStart;
-        field.selectionEnd = oldEnd;
-    }
-    
-    field.addEventListener('click', changed)
-    field.addEventListener('keyup', changed)
-}
-    </script>
 </body>
     <!-- END BODY-->
     

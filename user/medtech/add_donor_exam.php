@@ -1,8 +1,9 @@
 <?php 
-include '../../includes/dbcon.php';
-	$donor_id = $_POST['donor_id'];
+
+include 'session.php';
+	$did = $_POST['did'];
 	$weight = $_POST['weight'];
-	/* $height = $_POST['height']; */
+	$method = $_POST['method']; 
 	$blood_pressure = $_POST['blood_pressure'];
 	$pulse_rate = $_POST['pulse_rate'];
 	$temp = $_POST['temp'];
@@ -12,13 +13,11 @@ include '../../includes/dbcon.php';
 	$heart_lungs = $_POST['heart_lungs'];
 	$remarks = $_POST['remarks'];
 	$volume = $_POST['volume'];
-	$medical_officer = $_POST['medical_officer'];
 	$reasons_for_deferral = $_POST['reasons_for_deferral'];		
 			
-			mysqli_query($con,"INSERT INTO physical_exam(donor_id,weight,blood_pressure,pulse_rate,temp,gen_appearance,skin,heent,heart_lungs,remarks,volume,medical_officer,reasons_for_deferral,exam_status)	
-			VALUES('$donor_id','$weight','$blood_pressure','$pulse_rate','$temp','$gen_appearance', '$skin', '$heent', '$heart_lungs', '$remarks', '$volume','$medical_officer','$reasons_for_deferral','1')")or die(mysqli_error($con)); 
+			mysqli_query($con,"INSERT INTO physical_exam(donation_id,weight,blood_pressure,pulse_rate,temp,gen_appearance,skin,heent,heart_lungs,remarks,volume,user_id,reasons_for_deferral,method)	
+			VALUES('$did','$weight','$blood_pressure','$pulse_rate','$temp','$gen_appearance', '$skin', '$heent', '$heart_lungs', '$remarks', '$volume','$session_id','$reasons_for_deferral','$method')")or die(mysqli_error($con)); 
 				
-			mysqli_query($con,"UPDATE survey SET survey_status='1' WHERE donor_id='$donor_id'"); 
 
 			echo "<script type='text/javascript'>alert('Data Successfully Saved!');</script>";
 			echo "<script>window.location='physical.php'</script>";   

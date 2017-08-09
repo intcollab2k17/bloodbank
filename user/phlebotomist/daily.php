@@ -45,8 +45,8 @@
                                     </thead>
                                     <tbody>
 									<?php	
-									
-										$query1=mysqli_query($con,"select * from donation natural join donor where donation_id NOT IN (select donation_id from blood_exam)")or die(mysqli_error($con));
+									    $today=date('Y-m-d');
+										$query1=mysqli_query($con,"select * from physical_exam natural join donation natural join donor where donation_date='$today'")or die(mysqli_error($con));
 														while ($row=mysqli_fetch_array($query1)){
                                                             $did=$row['donation_id'];
 									?>  
