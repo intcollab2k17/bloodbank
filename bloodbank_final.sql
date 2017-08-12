@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2017 at 10:54 PM
+-- Generation Time: Aug 12, 2017 at 03:36 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -30,6 +30,14 @@ CREATE TABLE `agency` (
   `agency_id` int(11) NOT NULL,
   `agency_name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `agency`
+--
+
+INSERT INTO `agency` (`agency_id`, `agency_name`) VALUES
+(1, 'Bago City Hospital'),
+(2, 'Silay Hospital');
 
 -- --------------------------------------------------------
 
@@ -78,7 +86,67 @@ INSERT INTO `answer` (`answer_id`, `question_id`, `answer`, `survey_id`) VALUES
 (27, 27, 'yes', 1),
 (28, 28, 'yes', 1),
 (29, 29, 'no', 1),
-(30, 30, 'no', 1);
+(30, 30, 'no', 1),
+(31, 1, 'yes', 1),
+(32, 2, 'yes', 1),
+(33, 3, 'yes', 1),
+(34, 4, 'yes', 1),
+(35, 5, 'yes', 1),
+(36, 6, 'yes', 1),
+(37, 7, 'no', 1),
+(38, 8, 'no', 1),
+(39, 9, 'no', 1),
+(40, 10, 'no', 1),
+(41, 11, 'no', 1),
+(42, 12, 'no', 1),
+(43, 13, 'no', 1),
+(44, 14, 'no', 1),
+(45, 15, 'no', 1),
+(46, 16, 'no', 1),
+(47, 17, 'yes', 1),
+(48, 18, 'yes', 1),
+(49, 19, 'yes', 1),
+(50, 20, 'yes', 1),
+(51, 21, 'yes', 1),
+(52, 22, 'yes', 1),
+(53, 23, 'yes', 1),
+(54, 24, 'yes', 1),
+(55, 25, 'no', 1),
+(56, 26, 'no', 1),
+(57, 27, 'no', 1),
+(58, 28, 'yes', 1),
+(59, 29, 'yes', 1),
+(60, 30, 'yes', 1),
+(61, 1, 'yes', 2),
+(62, 2, 'yes', 2),
+(63, 3, 'yes', 2),
+(64, 4, 'yes', 2),
+(65, 5, 'yes', 2),
+(66, 6, 'yes', 2),
+(67, 7, 'yes', 2),
+(68, 8, 'yes', 2),
+(69, 9, 'yes', 2),
+(70, 10, 'yes', 2),
+(71, 11, 'yes', 2),
+(72, 12, 'yes', 2),
+(73, 13, 'yes', 2),
+(74, 14, 'yes', 2),
+(75, 15, 'yes', 2),
+(76, 16, 'yes', 2),
+(77, 17, 'yes', 2),
+(78, 18, 'no', 2),
+(79, 19, 'no', 2),
+(80, 20, 'no', 2),
+(81, 21, 'no', 2),
+(82, 22, 'no', 2),
+(83, 23, 'no', 2),
+(84, 24, 'no', 2),
+(85, 25, 'no', 2),
+(86, 26, 'no', 2),
+(87, 27, 'no', 2),
+(88, 28, 'no', 2),
+(89, 29, 'no', 2),
+(90, 30, 'no', 2);
 
 -- --------------------------------------------------------
 
@@ -94,14 +162,18 @@ CREATE TABLE `blood_exam` (
   `segment_number` varchar(30) NOT NULL,
   `time_started` time NOT NULL,
   `time_ended` time NOT NULL,
-  `phlebotomist` varchar(50) NOT NULL,
   `blood_type` varchar(10) NOT NULL,
-  `screened_by` varchar(50) NOT NULL,
   `hematocrit` varchar(30) NOT NULL,
   `exam_status` int(11) NOT NULL,
-  `donation_date` date NOT NULL,
   `expiry` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blood_exam`
+--
+
+INSERT INTO `blood_exam` (`blood_exam_id`, `donation_id`, `user_id`, `blood_bag_type`, `segment_number`, `time_started`, `time_ended`, `blood_type`, `hematocrit`, `exam_status`, `expiry`) VALUES
+(1, 3, 4, 'Single', '133', '01:00:00', '01:00:00', 'a', 'kjk', 0, '2017-01-01');
 
 -- --------------------------------------------------------
 
@@ -119,14 +191,6 @@ CREATE TABLE `booking` (
   `booking_city` varchar(50) NOT NULL,
   `program_name` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`booking_id`, `donor_id`, `booking_date`, `booking_time`, `status`, `booking_address`, `booking_city`, `program_name`) VALUES
-(1, 1, '2017-07-17', '09:00:00', 0, '', '', ''),
-(2, 2, '2017-07-12', '21:15:00', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -180,13 +244,19 @@ INSERT INTO `city` (`city_id`, `city_name`, `zipcode`) VALUES
 CREATE TABLE `donation` (
   `donation_id` int(11) NOT NULL,
   `donor_id` int(11) NOT NULL,
-  `event_id` int(11) NOT NULL,
+  `program_id` int(11) NOT NULL,
   `donation_date` date NOT NULL,
   `donation_time` time NOT NULL,
   `expiry` date NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `survey_id` int(11) NOT NULL
+  `donation_status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `donation`
+--
+
+INSERT INTO `donation` (`donation_id`, `donor_id`, `program_id`, `donation_date`, `donation_time`, `expiry`, `donation_status`) VALUES
+(3, 1, 1, '2017-08-07', '00:53:48', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -202,6 +272,7 @@ CREATE TABLE `donor` (
   `donor_bday` date NOT NULL,
   `donor_gender` varchar(100) NOT NULL,
   `donor_contact` varchar(100) NOT NULL,
+  `donor_tel` varchar(15) NOT NULL,
   `donor_email` varchar(100) NOT NULL,
   `donor_password` varchar(30) NOT NULL,
   `donor_nationality` varchar(100) NOT NULL,
@@ -209,33 +280,21 @@ CREATE TABLE `donor` (
   `donor_occupation` varchar(100) NOT NULL,
   `donor_address` varchar(100) NOT NULL,
   `donor_city` varchar(30) NOT NULL,
+  `donor_province` varchar(50) NOT NULL,
   `donor_zipcode` varchar(10) NOT NULL,
   `donor_office_address` varchar(100) NOT NULL,
   `donor_office_zipcode` int(10) NOT NULL,
   `donor_pic` varchar(100) NOT NULL,
-  `donor_type` varchar(30) NOT NULL
+  `donor_type` varchar(30) NOT NULL,
+  `donor_preferred` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `donor`
 --
 
-INSERT INTO `donor` (`donor_id`, `donor_last`, `donor_first`, `donor_middle`, `donor_bday`, `donor_gender`, `donor_contact`, `donor_email`, `donor_password`, `donor_nationality`, `donor_civil`, `donor_occupation`, `donor_address`, `donor_city`, `donor_zipcode`, `donor_office_address`, `donor_office_zipcode`, `donor_pic`, `donor_type`) VALUES
-(1, 'Cueva', 'Kaye', 'G', '1994-10-24', 'female', '0987e78er', 'kaye@y.c', '123', 'Filipino', '', 'Teller', 'Brgy. Bato', 'Sagay', '', '', 0, '', ''),
-(2, 'Magbanua', 'Lee Pipez', 'Tolentino', '1970-01-01', 'female', '09051914070', 'lee@gmail.com', '123', 'Filipino', '', 'Sysad', 'Busay', 'Bago', '', '', 0, '12366293_1101014223243438_7439809184725925904_n.jpg', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `event`
---
-
-CREATE TABLE `event` (
-  `event_id` int(11) NOT NULL,
-  `event_name` varchar(100) NOT NULL,
-  `event_address` varchar(100) NOT NULL,
-  `event_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `donor` (`donor_id`, `donor_last`, `donor_first`, `donor_middle`, `donor_bday`, `donor_gender`, `donor_contact`, `donor_tel`, `donor_email`, `donor_password`, `donor_nationality`, `donor_civil`, `donor_occupation`, `donor_address`, `donor_city`, `donor_province`, `donor_zipcode`, `donor_office_address`, `donor_office_zipcode`, `donor_pic`, `donor_type`, `donor_preferred`) VALUES
+(1, 'jhj', 'jhj', 'jh', '1989-01-01', 'female', '98798', '87878', 'emoblazz@gmail.com', '123', 'Filipino', 'Single', 'kjkj', 'ljkj', 'Bacolod City', 'jhh', '', '', 0, 'default.gif', 'Volunteer', '');
 
 -- --------------------------------------------------------
 
@@ -248,6 +307,232 @@ CREATE TABLE `linkages` (
   `agency_id` int(11) NOT NULL,
   `program_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `linkages`
+--
+
+INSERT INTO `linkages` (`linkage_id`, `agency_id`, `program_id`) VALUES
+(1, 1, 3),
+(2, 2, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nationality`
+--
+
+CREATE TABLE `nationality` (
+  `nationality_id` int(11) NOT NULL,
+  `nationality` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nationality`
+--
+
+INSERT INTO `nationality` (`nationality_id`, `nationality`) VALUES
+(2, 'Afghan'),
+(3, 'Albanian'),
+(4, 'Algerian'),
+(5, 'American'),
+(6, 'Andorran'),
+(7, 'Angolan'),
+(8, 'Antiguans'),
+(9, 'Argentinean'),
+(10, 'Armenian'),
+(11, 'Australian'),
+(12, 'Austrian'),
+(13, 'Azerbaijani'),
+(14, 'Bahamian'),
+(15, 'Bahraini'),
+(16, 'Bangladeshi'),
+(17, 'Barbadian'),
+(18, 'Barbudans'),
+(19, 'Batswana'),
+(20, 'Belarusian'),
+(21, 'Belgian'),
+(22, 'Belizean'),
+(23, 'Beninese'),
+(24, 'Bhutanese'),
+(25, 'Bolivian'),
+(26, 'Bosnian'),
+(27, 'Brazilian'),
+(28, 'British'),
+(29, 'Bruneian'),
+(30, 'Bulgarian'),
+(31, 'Burkinabe'),
+(32, 'Burmese'),
+(33, 'Burundian'),
+(34, 'Cambodian'),
+(35, 'Cameroonian'),
+(36, 'Canadian'),
+(37, 'Cape Verdean'),
+(38, 'Central African'),
+(39, 'Chadian'),
+(40, 'Chilean'),
+(41, 'Chinese'),
+(42, 'Colombian'),
+(43, 'Comoran'),
+(44, 'Congolese'),
+(45, 'Congolese'),
+(46, 'Costa Rican'),
+(47, 'Croatian'),
+(48, 'Cuban'),
+(49, 'Cypriot'),
+(50, 'Czech'),
+(51, 'Danish'),
+(52, 'Djibouti'),
+(53, 'Dominican'),
+(54, 'Dominican'),
+(55, 'Dutch'),
+(56, 'Dutchman'),
+(57, 'Dutchwoman'),
+(58, 'East Timorese'),
+(59, 'Ecuadorean'),
+(60, 'Egyptian'),
+(61, 'Emirian'),
+(62, 'Equatorial Guin'),
+(63, 'Eritrean'),
+(64, 'Estonian'),
+(65, 'Ethiopian'),
+(66, 'Fijian'),
+(67, 'Filipino'),
+(68, 'Finnish'),
+(69, 'French'),
+(70, 'Gabonese'),
+(71, 'Gambian'),
+(72, 'Georgian'),
+(73, 'German'),
+(74, 'Ghanaian'),
+(75, 'Greek'),
+(76, 'Grenadian'),
+(77, 'Guatemalan'),
+(78, 'Guinea-Bissauan'),
+(79, 'Guinean'),
+(80, 'Guyanese'),
+(81, 'Haitian'),
+(82, 'Herzegovinian'),
+(83, 'Honduran'),
+(84, 'Hungarian'),
+(85, 'I-Kiribati'),
+(86, 'Icelander'),
+(87, 'Indian'),
+(88, 'Indonesian'),
+(89, 'Iranian'),
+(90, 'Iraqi'),
+(91, 'Irish'),
+(92, 'Irish'),
+(93, 'Israeli'),
+(94, 'Italian'),
+(95, 'Ivorian'),
+(96, 'Jamaican'),
+(97, 'Japanese'),
+(98, 'Jordanian'),
+(99, 'Kazakhstani'),
+(100, 'Kenyan'),
+(101, 'Kittian and Nev'),
+(102, 'Kuwaiti'),
+(103, 'Kyrgyz'),
+(104, 'Laotian'),
+(105, 'Latvian'),
+(106, 'Lebanese'),
+(107, 'Liberian'),
+(108, 'Libyan'),
+(109, 'Liechtensteiner'),
+(110, 'Lithuanian'),
+(111, 'Luxembourger'),
+(112, 'Macedonian'),
+(113, 'Malagasy'),
+(114, 'Malawian'),
+(115, 'Malaysian'),
+(116, 'Maldivan'),
+(117, 'Malian'),
+(118, 'Maltese'),
+(119, 'Marshallese'),
+(120, 'Mauritanian'),
+(121, 'Mauritian'),
+(122, 'Mexican'),
+(123, 'Micronesian'),
+(124, 'Moldovan'),
+(125, 'Monacan'),
+(126, 'Mongolian'),
+(127, 'Moroccan'),
+(128, 'Mosotho'),
+(129, 'Motswana'),
+(130, 'Mozambican'),
+(131, 'Namibian'),
+(132, 'Nauruan'),
+(133, 'Nepalese'),
+(134, 'Netherlander'),
+(135, 'New Zealander'),
+(136, 'Ni-Vanuatu'),
+(137, 'Nicaraguan'),
+(138, 'Nigerian'),
+(139, 'Nigerien'),
+(140, 'North Korean'),
+(141, 'Northern Irish'),
+(142, 'Norwegian'),
+(143, 'Omani'),
+(144, 'Pakistani'),
+(145, 'Palauan'),
+(146, 'Panamanian'),
+(147, 'Papua New Guine'),
+(148, 'Paraguayan'),
+(149, 'Peruvian'),
+(150, 'Polish'),
+(151, 'Portuguese'),
+(152, 'Qatari'),
+(153, 'Romanian'),
+(154, 'Russian'),
+(155, 'Rwandan'),
+(156, 'Saint Lucian'),
+(157, 'Salvadoran'),
+(158, 'Samoan'),
+(159, 'San Marinese'),
+(160, 'Sao Tomean'),
+(161, 'Saudi'),
+(162, 'Scottish'),
+(163, 'Senegalese'),
+(164, 'Serbian'),
+(165, 'Seychellois'),
+(166, 'Sierra Leonean'),
+(167, 'Singaporean'),
+(168, 'Slovakian'),
+(169, 'Slovenian'),
+(170, 'Solomon Islande'),
+(171, 'Somali'),
+(172, 'South African'),
+(173, 'South Korean'),
+(174, 'Spanish'),
+(175, 'Sri Lankan'),
+(176, 'Sudanese'),
+(177, 'Surinamer'),
+(178, 'Swazi'),
+(179, 'Swedish'),
+(180, 'Swiss'),
+(181, 'Syrian'),
+(182, 'Taiwanese'),
+(183, 'Tajik'),
+(184, 'Tanzanian'),
+(185, 'Thai'),
+(186, 'Togolese'),
+(187, 'Tongan'),
+(188, 'Trinidadian or '),
+(189, 'Tunisian'),
+(190, 'Turkish'),
+(191, 'Tuvaluan'),
+(192, 'Ugandan'),
+(193, 'Ukrainian'),
+(194, 'Uruguayan'),
+(195, 'Uzbekistani'),
+(196, 'Venezuelan'),
+(197, 'Vietnamese'),
+(198, 'Welsh'),
+(199, 'Welsh'),
+(200, 'Yemenite'),
+(201, 'Zambian'),
+(202, 'Zimbabwean');
 
 -- --------------------------------------------------------
 
@@ -270,8 +555,15 @@ CREATE TABLE `physical_exam` (
   `volume` varchar(15) NOT NULL,
   `reasons_for_deferral` varchar(100) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `survey_id` int(11) NOT NULL
+  `method` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `physical_exam`
+--
+
+INSERT INTO `physical_exam` (`exam_id`, `donation_id`, `weight`, `blood_pressure`, `pulse_rate`, `temp`, `gen_appearance`, `skin`, `heent`, `heart_lungs`, `remarks`, `volume`, `reasons_for_deferral`, `user_id`, `method`) VALUES
+(1, 3, '78', '122/231', '12', '12', 'sdvfd', 'gdd', 'gfdgd', 'gdgd', 'Accepted', '123', '', 2, 'Pheresis');
 
 -- --------------------------------------------------------
 
@@ -293,7 +585,9 @@ CREATE TABLE `program` (
 --
 
 INSERT INTO `program` (`program_id`, `program`, `program_address`, `city_id`, `program_date`, `program_time`) VALUES
-(1, 'Walk-in', 'Bacolod City', 1, '0000-00-00', '00:00:00');
+(1, 'Walk-in', 'Negros First Cyber Building', 1, '0000-00-00', '00:00:00'),
+(2, 'Bloodletting', 'Brgy. Busay', 2, '2008-09-17', '08:00:00'),
+(3, 'sa', 'sa', 1, '0000-00-00', '08:15:00');
 
 -- --------------------------------------------------------
 
@@ -370,13 +664,6 @@ CREATE TABLE `schedule` (
   `date_end` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `schedule`
---
-
-INSERT INTO `schedule` (`sched_id`, `sched_date`, `start_time`, `end_time`, `user_id`, `date_end`) VALUES
-(6, '2017-07-08', '09:45:00', '09:45:00', 1, '1970-01-01');
-
 -- --------------------------------------------------------
 
 --
@@ -387,16 +674,15 @@ CREATE TABLE `survey` (
   `survey_id` int(11) NOT NULL,
   `donation_id` int(11) NOT NULL,
   `survey_date` date NOT NULL,
-  `survey_status` int(11) NOT NULL,
-  `program_id` int(11) NOT NULL
+  `survey_status` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `survey`
 --
 
-INSERT INTO `survey` (`survey_id`, `donation_id`, `survey_date`, `survey_status`, `program_id`) VALUES
-(1, 2, '2017-07-07', 1, 1);
+INSERT INTO `survey` (`survey_id`, `donation_id`, `survey_date`, `survey_status`) VALUES
+(2, 3, '2017-08-06', 'Accepted');
 
 -- --------------------------------------------------------
 
@@ -408,7 +694,8 @@ CREATE TABLE `test` (
   `test_id` int(11) NOT NULL,
   `test` varchar(30) NOT NULL,
   `result` varchar(100) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `donation_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -433,7 +720,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `user_last`, `user_first`, `user_middle`, `user_type`) VALUES
 (1, 'admin', 'admin', 'Daemon', 'Matt', 'C.', 'Recruitment Officer '),
-(2, 'med', 'med', 'Techonology', 'Medical', '', 'Medical Technology'),
+(2, 'med', 'med', 'Pipes', 'Lee', 'T', 'Medical Technology'),
 (3, 'admin', 'admin', 'Dragic', 'Goran', 'Lee', 'Administrator'),
 (4, 'test', 'test', 'test', 'test', 'test', 'Phlebotomist');
 
@@ -491,16 +778,16 @@ ALTER TABLE `donor`
   ADD PRIMARY KEY (`donor_id`);
 
 --
--- Indexes for table `event`
---
-ALTER TABLE `event`
-  ADD PRIMARY KEY (`event_id`);
-
---
 -- Indexes for table `linkages`
 --
 ALTER TABLE `linkages`
   ADD PRIMARY KEY (`linkage_id`);
+
+--
+-- Indexes for table `nationality`
+--
+ALTER TABLE `nationality`
+  ADD PRIMARY KEY (`nationality_id`);
 
 --
 -- Indexes for table `physical_exam`
@@ -558,22 +845,22 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `agency`
 --
 ALTER TABLE `agency`
-  MODIFY `agency_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `agency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 --
 -- AUTO_INCREMENT for table `blood_exam`
 --
 ALTER TABLE `blood_exam`
-  MODIFY `blood_exam_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `blood_exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `category`
 --
@@ -588,32 +875,32 @@ ALTER TABLE `city`
 -- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
-  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
-  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `event`
---
-ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `linkages`
 --
 ALTER TABLE `linkages`
-  MODIFY `linkage_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `linkage_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `nationality`
+--
+ALTER TABLE `nationality`
+  MODIFY `nationality_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=203;
 --
 -- AUTO_INCREMENT for table `physical_exam`
 --
 ALTER TABLE `physical_exam`
-  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `program_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `program_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `program_donor`
 --
@@ -628,12 +915,12 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `survey`
 --
 ALTER TABLE `survey`
-  MODIFY `survey_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `survey_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `test`
 --
