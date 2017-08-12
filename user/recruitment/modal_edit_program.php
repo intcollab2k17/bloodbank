@@ -6,9 +6,10 @@
                                             <h4 class="modal-title" id="H1">Edit Program</h4>
                                         </div>
                                         <div class="modal-body">
-                                    <form role="form" method="post" action="program_save.php">
+                                    <form role="form" method="post" action="program_update.php">
                                         <div class="form-group">
                                             <label>Program Name</label>
+                                            <input type = "hidden" value = "<?=$row['program_id']?>" name = "program_id">
                                             <input class="form-control" name="name"  value = "<?=$row['program']?>" placeholder="Name of Program" required>
                                             <p class="help-block">Name of Program</p>
                                         </div>
@@ -36,7 +37,7 @@
                                         <div class="form-group">
                                             <label class="control-label" for="dp1">Time</label>
                                             <div class="input-group bootstrap-timepicker">
-                                                                <input class="form-control timepicker-default" name = "time"type="text" value = "<?=$row['program_time']?>"/>
+                                                                <input class="form-control timepicker-default" name = "time" type="text" value = "<?=$row['program_time']?>"/>
                                                                     <span class="input-group-addon add-on"><i class="icon-time"></i></span>                                                     
                                                             </div>
                                         </div>
