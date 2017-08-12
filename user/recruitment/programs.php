@@ -61,11 +61,9 @@
                                             <td class="center">
                                             <?php 
                                             $query2=mysqli_query($con,"select * from linkages natural join agency  where program_id='$id'")or die(mysqli_error($con));
-                                        while ($row2=mysqli_fetch_array($query2)){
-                                           
+                                                    while ($row2=mysqli_fetch_array($query2)){                                        
                                             echo $row2['agency_name'].",";}
-                                            ?>
-                                                
+                                            ?>                                                
                                             </td>
                                             <td class="center">
 												<a href="#update<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
