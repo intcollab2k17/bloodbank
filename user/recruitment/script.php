@@ -20,7 +20,7 @@
         <script src="../assets/plugins/autosize/jquery.autosize.min.js"></script>
         <script src="../assets/plugins/jasny/js/bootstrap-inputmask.js"></script>
         <script src="../assets/js/formsInit.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
         <script src="../assets/plugins/chosen/chosen.jquery.min.js"></script>
         
@@ -28,7 +28,13 @@
          $(document).ready(function () {
              $('#dataTables-example').dataTable();
          });
-    </script>
+        </script>
+        <script>
+            $("#agency").select2({
+                placeholder: "Select Agency",
+                allowClear: true
+            });
+        </script>
     
     
         

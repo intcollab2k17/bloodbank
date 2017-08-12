@@ -2,6 +2,17 @@
  include 'session.php';
  include 'header.php';
  ?>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+ <style>
+    .select2-container {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+    width: 100% !important;
+    }
+ </style>
 
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -64,7 +75,7 @@
                                                     while ($row2=mysqli_fetch_array($query2)){                                        
                                             echo $row2['agency_name'].",";}
                                             ?>                                                
-                                            </td>
+                                            </t d>
                                             <td class="center">
 												<a href="#update<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
 											</td>
@@ -96,14 +107,17 @@
     </div>
 
      <!--END MAIN WRAPPER -->
-
+    
    <!-- FOOTER -->
     <div id="footer">
         <?php include('footer.php');?>
     </div>
+     
+
     <!--END FOOTER -->
      <!-- GLOBAL SCRIPTS -->
    <?php include 'script.php';?>
+
         <script>
             $(function () { formInit(); });
         </script>

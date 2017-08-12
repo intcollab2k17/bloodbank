@@ -44,8 +44,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Agency</label>
-                                            <select class="form-control" tabindex="4" name="agency[]" multiple="multiple">
+                                            <label>Agency</label><br/>
+                                            <select class="form-control" id = "agency" tabindex="4" name="agency[]" multiple="multiple">
 
                                                 <?php
                                                     $query2=mysqli_query($con,"select * from agency order by agency_name")or die(mysqli_error());
