@@ -62,6 +62,7 @@
 										$query1=mysqli_query($con,"select * from program ORDER BY program")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
 											$id=$row['program_id'];
+                                            $program_date = $row['program_date'];
 											
 									?>  
                                         <tr class="odd gradeX">
@@ -75,11 +76,13 @@
                                                     while ($row2=mysqli_fetch_array($query2)){                                        
                                             echo $row2['agency_name'].",";}
                                             ?>                                                
-                                            </t d>
+                                            </td>
                                             <td class="center">
 												<a href="#update<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
 											</td>
                                         </tr> 
+                                            <?php include 'modal_edit_program.php';?>
+
 										<?php }?>									
                                     </tbody>
                                 </table>
