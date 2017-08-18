@@ -47,7 +47,7 @@
 									<?php	
 									include 'dbcon.php';								
                                     $date=date('Y-m-d');
-										$query1=mysqli_query($con,"select *,COUNT(*) as count from physical_exam where remarks='Accepted' and expiry>='$date' GROUP BY blood_type ORDER BY blood_type ASC")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select *,COUNT(*) as count from donation natural join blood_exam natural join physical_exam where remarks='Accepted' and blood_exam.expiry>='$date' GROUP BY blood_type ORDER BY blood_type ASC")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
 											
 									?>  
@@ -77,7 +77,7 @@
     $date = date("Y-m-d");
     $expiring = date("Y-m-d",strtotime($date. " + 3 days")); 
 
-    $avail=mysqli_query($con,"select COUNT(*) as blood from physical_exam where expiry>='$date'")or die(mysqli_error($con));
+    $avail=mysqli_query($con,"select COUNT(*) as blood from blood_exam where expiry>='$date'")or die(mysqli_error($con));
             $rowa=mysqli_fetch_array($avail);
 ?>                     
             <div class="well text-center">
@@ -90,7 +90,7 @@
             </div>
 
 <?php     
-    $querycount=mysqli_query($con,"select COUNT(*) as count from physical_exam where expiry<='$expiring' and expiry>='$date'")or die(mysqli_error($con));
+    $querycount=mysqli_query($con,"select COUNT(*) as count from blood_exam where expiry<='$expiring' and expiry>='$date'")or die(mysqli_error($con));
         $rowcount=mysqli_fetch_array($querycount);
 ?>         
             <div class="well text-center">
@@ -102,7 +102,7 @@
                 </a>
             </div>
 <?php
-    $query=mysqli_query($con,"select COUNT(donor_id) as donor from physical_exam group by donor_id")or die(mysqli_error($con));
+    $query=mysqli_query($con,"select COUNT(donor_id) as donor from donation natural join physical_exam group by donor_id")or die(mysqli_error($con));
             $count=0;    
             while($row=mysqli_fetch_array($query)){
                $count=$count+1;

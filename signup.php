@@ -142,16 +142,16 @@
 			<div class="col-md-12">
 				<div class="md-radio-inline">Preferred Mailing Address 
 						<div class="md-radio">
-							<input type="radio" id="radio6" name="preferred" class="md-radiobtn" value="Home">
-							<label for="radio6">
+							<input type="radio" id="radio11" name="preferred" class="md-radiobtn" value="Home">
+							<label for="radio11">
 							<span></span>
 							<span class="check"></span>
 							<span class="box"></span>
 							Home </label>
 						</div>
 						<div class="md-radio">
-							<input type="radio" id="radio7" class="md-radiobtn" name="preferred" value="Office">
-							<label for="radio7">
+							<input type="radio" id="radio12" class="md-radiobtn" name="preferred" value="Office">
+							<label for="radio12">
 							<span></span>
 							<span class="check"></span>
 							<span class="box"></span>

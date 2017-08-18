@@ -113,7 +113,7 @@
 									<td>
 										
 										<div class="md-radio">
-											<input type="radio" id="<?php echo $qid;?>1" name="answer<?php echo $qid;?>" class="md-radiobtn" value="yes">
+											<input type="radio" id="<?php echo $qid;?>1" name="answer<?php echo $qid;?>" class="md-radiobtn" value="yes" required>
 											<label for="<?php echo $qid;?>1">
 											<span></span>
 											<span class="check"></span>
