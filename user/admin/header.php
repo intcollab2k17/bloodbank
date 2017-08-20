@@ -42,11 +42,24 @@
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
 <link rel="stylesheet" href="../assets/plugins/timepicker/css/bootstrap-timepicker.min.css" />
 <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
-	
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 	
 	<style>
 		.inner{
 			min-height:auto !important;
 		}
+        .amcharts-chart-div a {
+            display: none !important;
+        }
+        <style>
+        #chartDiv, #barDiv {
+            width: 100%;
+            height: 500px;
+        }
 	</style>
 </head>

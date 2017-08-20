@@ -82,6 +82,15 @@
 				</div>
 			</div>
 			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label visible-ie8 visible-ie9">Age</label>
+					<input class="form-control form-control-inline input-medium" type="text" name="donor_age" required placeholder="Age">
+					<span class="help-block">
+						Insert Age 
+					</span>
+				</div>
+			</div>
+			<div class="col-md-4">
 					<div class="md-radio-inline">
 						<div class="md-radio">
 							<input type="radio" id="radio6" name="gender" class="md-radiobtn" value="male">

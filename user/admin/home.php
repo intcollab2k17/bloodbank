@@ -3,6 +3,12 @@
 include 'session.php';
 include 'header.php';
 ?>
+<style>
+  #chartDiv, #barDiv {
+      width: 100%;
+      height: 500px;
+    }
+</style>
 
     <!-- END HEAD -->
 
@@ -36,7 +42,7 @@ include 'header.php';
                 </div>
                   <hr />
                  <!--BLOCK SECTION -->
-                 <div class="row">
+                 <!-- <div class="row">
                     <div class="col-lg-12">
                         <div style="text-align: center;">
                            
@@ -78,28 +84,34 @@ include 'header.php';
 
                     </div>
 
-                </div>
+                </div> -->
                   <!--END BLOCK SECTION -->
-                <hr />
+               
                    <!-- CHART & CHAT  SECTION -->
                  <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Real Time Blood Inventory
-                            </div>
-
-                                                
-			<div class="demo-container">
-			<div id="graph" class="col-md-12"></div> 
-		</div>
-
+                                Donor Percentage as of today by gender and age range
+                            </div>  
+                            <div class = "panel panel-body">  
+                                     <div id="barDiv" class="col-md-12"></div>
+                           </div>
+                           
                         </div>
-
                     </div>
-
-                    
-                     <div class="col-lg-4">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                             Total number of Donor According to Agency
+                            </div>  
+                            <div class = "panel panel-body">  
+                                     <div id="chartDiv" class = "col-lg-12"></div>
+                           </div>
+                           
+                        </div>
+                    </div>
+                     <!-- <div class="col-lg-4">
 
                         <div class="chat-panel panel panel-primary">
                             <div class="panel-heading">
@@ -113,18 +125,22 @@ include 'header.php';
                             </div>
 
                             <div class="panel-body">
-                                <?php   
+                                <?php  /* 
             include 'dbcon.php';                                
             $date=date('Y-m-d');
                     $query1=mysqli_query($con,"select *,COUNT(*) as count from physical_exam where remarks='Accepted' and expiry>='$date' GROUP BY blood_type ORDER BY blood_type ASC")or die(mysqli_error($con));
-                           while ($row=mysqli_fetch_array($query1)){
+                           while ($row=mysqli_fetch_array($query1)){*/
                                             
                                     ?>                  
-                    <li><?php echo $row['blood_type'];?> &nbsp; : <span><?php echo $row['count'];?></span></li>
-<?php }?> 
-                            </div>
+                    <li><?php
+                    /* echo $row['blood_type'];?> &nbsp; : <span><?php echo $row['count'];*/
+                    ?></span></li>
+<?php 
+/*}*/
+?> 
+                            </div> -->
 
-                            <div class="panel-footer">
+                            <!-- <div class="panel-footer">
                                 <div class="input-group">
                                     <input id="Text1" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                                     <span class="input-group-btn">
@@ -135,14 +151,14 @@ include 'header.php';
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
 
 
                     </div>
                 </div>
                  <!--END CHAT & CHAT SECTION -->
                  <!-- COMMENT AND NOTIFICATION  SECTION -->
-                <div class="row">
+               <!--  <div class="row">
                     <div class="col-lg-12">
 
                         <div class="chat-panel panel panel-success">
@@ -158,7 +174,7 @@ include 'header.php';
                         </div>
                     </div>
                     
-                </div>
+                </div> -->
                 <!-- END COMMENT AND NOTIFICATION  SECTION -->
                 
 
@@ -173,23 +189,30 @@ include 'header.php';
         <!--END PAGE CONTENT -->
 
          <!-- RIGHT STRIP  SECTION -->
-        <div id="right">
+       <!--  <div id="right">
 
             
             <div class="well well-small">
                 <ul class="list-unstyled">
 <?php   
-            include 'dbcon.php';                                
+            /*include 'dbcon.php';                                
             $date=date('Y-m-d');
                     $query1=mysqli_query($con,"select *,COUNT(*) as count from physical_exam where remarks='Accepted' and expiry>='$date' GROUP BY blood_type ORDER BY blood_type ASC")or die(mysqli_error($con));
                            while ($row=mysqli_fetch_array($query1)){
-                                            
+                                            */
                                     ?>                  
-                    <li><?php echo $row['blood_type'];?> &nbsp; : <span><?php echo $row['count'];?></span></li>
-<?php }?>   
+                    <li><?php 
+                    /*echo $row['blood_type'];?> &nbsp; : <span><?php echo $row['count'];*/
+
+                    ?></span></li>
+<?php 
+
+/*}*/
+
+?>   
                 </ul>
-            </div>
-            <div class="well well-small">
+            </div> -->
+           <!--  <div class="well well-small">
                 <button class="btn btn-block"> Help </button>
                 <button class="btn btn-primary btn-block"> Tickets</button>
                 <button class="btn btn-info btn-block"> New </button>
@@ -197,8 +220,8 @@ include 'header.php';
                 <button class="btn btn-danger btn-block"> Profit </button>
                 <button class="btn btn-warning btn-block"> Sales </button>
                 <button class="btn btn-inverse btn-block"> Stock </button>
-            </div>
-            <div class="well well-small">
+            </div> -->
+            <!-- <div class="well well-small">
                 <span>Profit</span><span class="pull-right"><small>20%</small></span>
 
                 <div class="progress mini">
@@ -219,7 +242,7 @@ include 'header.php';
                 <div class="progress mini">
                     <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
                 </div>
-            </div>
+            </div> -->
           
             
          
@@ -239,11 +262,95 @@ include 'header.php';
 
     <!-- GLOBAL SCRIPTS -->
     <?php include('script.php');?>
+   <script type="text/javascript">
+
+    (function($){
+
+      function showBar()
+      {
+        var bar = AmCharts.makeChart("barDiv", {
+            "theme": "light",
+            "type": "serial",
+            "valueAxes": [{
+                "stackType": "3d",
+                "unit": "%",
+                "position": "left",
+                "title": "Percentage of Donor  Male / Female from age range.",
+            }],
+            "startDuration": 0,
+            "graphs": [{
+                "balloonText": "Male [[category]] ( [[value]] )</b>",
+                "fillAlphas": 0.9,
+                "lineAlpha": 0.2,
+                "title": "male",
+                "type": "column",
+                "valueField": "male"
+            }, {
+                "balloonText": "Female [[category]] ( [[value]] )</b>",
+                "fillAlphas": 0.9,
+                "lineAlpha": 0.2,
+                "title": "female",
+                "type": "column",
+                "valueField": "female"
+            }],
+            "plotAreaFillAlphas": 0.1,
+            "depth3D": 60,
+            "angle": 30,
+            "title":"Ages from",
+            "categoryField": "name",
+            "categoryAxis": {
+                "gridPosition": "start"
+            },
+          "export": {
+            "enabled": true
+          }
+        });
+
+        $.get("http://localhost/bloodbank/user/admin/data_chart.php", function(response){
+
+            bar.dataProvider = response;
+
+            bar.validateData();
+        });
+      }
+
+      function showChart()
+      {
+        var chart = AmCharts.makeChart("chartDiv", {
+          "type": "pie",
+          "theme": "light",
+          "valueField": "value",
+          "titleField": "city",
+          "outlineAlpha": 0.4,
+          "depth3D": 15,
+          "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+          "angle": 30,
+          "title": "Total number of Donor According to Agency",
+          "export": {
+            "enabled": true
+          }
+        });
+
+        $.get("http://localhost/bloodbank/user/admin/chart_data2.php", function(response){
+
+            chart.dataProvider = response;
+
+            chart.validateData();
+        });
+      }
+
+      showBar();
+      showChart();
+
+    }(jQuery));
+
+  </script>
+
    
     <!-- END PAGE LEVEL SCRIPTS -->
 
      <script type="text/javascript">
-        $(document).ready(function() {
+       /* $(document).ready(function() {
             var options = {
                 chart: {
                     renderTo: 'graph',
@@ -291,10 +398,10 @@ include 'header.php';
             
             
             
-        });   
+        });   */
         </script>
         <script type="text/javascript">
-    $(document).ready(function() {
+ /*   $(document).ready(function() {
       var options = {
               chart: {
                   renderTo: 'graphprogram',
@@ -352,7 +459,7 @@ include 'header.php';
             
             chart = new Highcharts.Chart(options);
           });
-      });
+      });*/
     </script>
       <script src="../assets/js/highcharts.js"></script>
         <script src="../assets/js/exporting.js"></script>

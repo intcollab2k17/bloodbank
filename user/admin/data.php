@@ -1,5 +1,6 @@
 <?php 
 include 'session.php';
+include 'dbcon.php';
 
 
 	$query = mysqli_query($con,"select COUNT(*) as count, program from survey natural join program where survey_status='1' group by program_id
