@@ -36,6 +36,7 @@
                         <li><a href="pages_uc.html"><i class="icon-angle-right"></i> Under Construction </a></li> -->
                     </ul>
                 </li>
+                <li><a href="logout.php"><i class="icon-power-off"></i> Log out</a></li>
             </ul>
 
         </div>

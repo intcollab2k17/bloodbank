@@ -1,5 +1,13 @@
 <?php include 'login_header.php';?>
-<body style = "background :url('../assets/frontend/onepage/img/blood.jpg');background-size:cover;">
+<style type="text/css">
+    .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: rgba(177, 67, 33, 0.87);
+    }
+</style>
+<body style = "background: url(../assets/frontend/onepage/img/blood.jpg) 0% 0% / cover;background-size: cover;background-repeat: no-repeat;">
    <div class="container">
     <div class="text-center">
 	<h1 class = "" style ="color:white;">Provincial Blood Bank Inventory System</h1>	
