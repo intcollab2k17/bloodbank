@@ -127,10 +127,10 @@
 							$headers .= 'From: <webmaster@example.com>' . "\r\n";
 							$headers .= 'Cc: myboss@example.com' . "\r\n";
 
-							var_dump(mail($to,$subject,$message,$headers));
+							mail($to,$subject,$message,$headers);
 	
-						/*echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
-						echo "<script>document.location='login.html';</script>";*/
+						echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
+						echo "<script>document.location='login.html';</script>";
 				}
 
 
