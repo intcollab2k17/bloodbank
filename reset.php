@@ -57,12 +57,11 @@ include('includes/dbcon.php');
                             $headers .= 'From: <webmaster@example.com>' . "\r\n";
                             $headers .= 'Cc: myboss@example.com' . "\r\n";
 
-                            var_dump(mail($to,$subject,$message,$headers));
-                            echo $code;
+                               var_dump(mail($to,$subject,$message,$headers));
+                               echo $code;
                 
-                   
-        }
-	
+                      
+            }
 	       else
            {
                 echo "<script type='text/javascript'>alert('Email address not found!');</script>";
