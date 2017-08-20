@@ -25,20 +25,42 @@ include('includes/dbcon.php');
     
             error_reporting( E_ALL );
             
-            $from = "info@bloodbank.com";
-            
-            $to = "$email";
-            
-            $subject = "Password Reset";
-            
-            $message = "Your password has been reset. Your new password is $code.";
-            
-            $headers = "From:" . $from;
-            
-            mail($to,$subject,$message, $headers);
+                            $to = $email;
+                            $subject = "Email Verification";
+
+                            $message = "
+                            <html>
+                            <head>
+                            <title>Change the password for your username</title>
+                            </head>
+                            <body>
+                            <p>Here is the new password for you account ".$email."</p>
+                            <table>
+                            <tr>
+                            <th>Email</th>
+                            <th>New Password</th>
+                            </tr>
+                            <tr>
+                            <td>".$code."</td>
+                            <td></td>
+                            </tr>
+                            </table>
+                            </body>
+                            </html>
+                            ";
+
+                            // Always set content-type when sending HTML email
+                            $headers = "MIME-Version: 1.0" . "\r\n";
+                            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                            // More headers
+                            $headers .= 'From: <webmaster@example.com>' . "\r\n";
+                            $headers .= 'Cc: myboss@example.com' . "\r\n";
+
+                            var_dump(mail($to,$subject,$message,$headers));
+                            echo $code;
                 
-                    echo "<script type='text/javascript'>alert('Successfully reset password! Kindly check your email.');</script>";
-                    echo "<script>document.location='login.html'</script>";   
+                   
         }
 	
 	       else

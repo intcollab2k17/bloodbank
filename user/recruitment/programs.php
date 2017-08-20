@@ -59,7 +59,7 @@
                                     </thead>
                                     <tbody>
 									<?php	
-										$query1=mysqli_query($con,"select * from program ORDER BY program")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select * from program  ORDER BY program")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
 											$id=$row['program_id'];
                                             $program_date = $row['program_date'];

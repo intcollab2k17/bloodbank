@@ -54,14 +54,14 @@
 							<title>Email Verification for ".$email."</title>
 							</head>
 							<body>
-							<p>This email contains Email !</p>
+							<p>Thank you for Signing up!</p>
 							<table>
 							<tr>
 							<th>".$first. ' '.$last."</th>
 							<th>Email Verification</th>
 							</tr>
 							<tr>
-							<td><a></a></td>
+							<td><a> </a></td>
 							<td></td>
 							</tr>
 							</table>
@@ -77,8 +77,7 @@
 							$headers .= 'From: <webmaster@example.com>' . "\r\n";
 							$headers .= 'Cc: myboss@example.com' . "\r\n";
 
-							mail($to,$subject,$message,$headers);
-
+							var_dump(mail($to,$subject,$message,$headers));
 	
 						echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
 						echo "<script>document.location='login.html';</script>";
