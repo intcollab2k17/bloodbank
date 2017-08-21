@@ -151,7 +151,7 @@
 			<div class="col-md-12">
 				<div class="md-radio-inline">Preferred Mailing Address 
 						<div class="md-radio">
-							<input type="radio" id="radio11" name="preferred" class="md-radiobtn" value="Home">
+							<input type="radio" id="radio11" name="preferred"  class="md-radiobtn elo" value="Home">
 							<label for="radio11">
 							<span></span>
 							<span class="check"></span>
