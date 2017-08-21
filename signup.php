@@ -130,22 +130,7 @@
 					<input class="form-control placeholder-no-fix" type="text" placeholder="Occupation" name="occupation" required/>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="form-group">
-					<label class="control-label visible-ie8 visible-ie9">Nationality</label>
-						
-					<select class="form-control placeholder-no-fix select2me" data-placeholder="Select Nationality" name="nationality" required>
-						<option value="" disabled selected>Select your Nationality</option>
-						<?php													
-							include('includes/dbcon.php');
-							$query1=mysqli_query($con,"select * from nationality order by nationality")or die(mysqli_error());
-							 while($row=mysqli_fetch_array($query1)){
-							?>
-							<option><?php echo $row['nationality'];?></option>
-							<?php }?>
-					</select>
-				</div>
-			</div>
+			
 		</div>
 		<div class="row">
 			<div class="col-md-12">
