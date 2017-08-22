@@ -52,9 +52,64 @@
                                             <td class = "center">*****</td>
                                             <td class="center"><?php echo $row['user_type'];?></td>
                                             <td class="center">
-												<a href="#editUser<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#editUser<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
+												<a href="#editUser<?=$id;?>" class="btn btn-success" data-toggle = "modal" data-target="#editUser<?=$id;?>"><i class = "fa fa-pencil"></i> Edit</a>
 											</td>
-                                        </tr> 
+                                        </tr>
+
+                                        <div class="modal fade" id="editUser<?=$id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="H2">Modal Form</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form method = "POST" action = "edit_user.php" enctype ="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label>Username</label>                                                    
+                                                    <input class="form-control" name = "username" Placeholder = "Create a username.." required = "true" value = "<?=$row['username'];?>"/>
+                                                    <input type = "text" name = "user_id" value = "<?=$row['user_id'];?>">                                                   
+                                                    <p class="help-block">This username account is used for your log in </p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input class="form-control" id = "password" name = "password" placeholder="Enter Password"  value = "<?=$row['password'];?>" />
+                                                </div>                                               
+                                                <div class="form-group">
+                                                    <label>Firstname</label>
+                                                    <input class="form-control" name = "user_first" Placeholder = "Specify your Firstname" required = "true" value = "<?=$row['user_first'];?>"/> 
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>Middlename</label>
+                                                    <input class="form-control" name = "user_middle" Placeholder = "Specify your Midllename" required = "true" value = "<?=$row['user_middle'];?>" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Lastname</label>
+                                                    <input class="form-control" name = "user_last" Placeholder = "Specify your Last name" required = "true" value = "<?=$row['user_last'];?>"/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>User Type</label>
+                                                    <select class = "form-control" name = "user_type" required>
+                                                        <option disabled visited><?=$row['user_type']?></option>                                                       
+                                                        <option value = "Administrator">Administrator</option>
+                                                        <option value = "Medical Technology">Med Tech</option>
+                                                        <option value = "Recruitment Officer">Recruitment Officer</option>
+                                                
+                                                    </select>
+                                                    
+                                                </div>
+                                                
+                                    
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button name = "save_user" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                     </div>
+                   
 										<?php }?>									
                                     </tbody>
                                 </table>
