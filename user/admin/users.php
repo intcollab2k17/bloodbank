@@ -105,7 +105,6 @@ var checkPasswordValidity = function() {
         password1.setCustomValidity('');
     }        
 };
-
 password1.addEventListener('change', checkPasswordValidity, false);
     </script>
 </body>
