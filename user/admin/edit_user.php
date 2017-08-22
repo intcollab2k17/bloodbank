@@ -19,6 +19,6 @@ include('dbcon.php');
 			mysqli_query($con,"UPDATE user SET username='$username',password='$password',user_first='$user_first',user_middle='$user_middle', user_last = '$user_last', user_type ='$user_type' where user_id='$id'")or die(mysqli_error($con)); 
 
 			echo "<script type='text/javascript'>alert('Successfully updated user details!');</script>";
-			echo "<script>document.location='user.php'</script>";  
+			echo "<script>document.location='users.php'</script>";  
 	
 ?>
