@@ -22,7 +22,7 @@
 												</div>
 												<div class="form-group">
 													<label>Firstname</label>
-													<input class="form-control" name = "user_first" Placeholder = "Specify your Firstname" required = "true"/>
+													<input class="form-control" name = "user_first" Placeholder = "Specify your Firstname" required = "true"/> 
 												</div> 
 												<div class="form-group">
 													<label>Middlename</label>

@@ -71,11 +71,11 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input class="form-control" id = "password1" name = "password" placeholder="Enter Password" />
+                                                    <input class="form-control" id = "" name = "password" placeholder="Enter Password" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
-                                                    <input class="form-control" id = "password2" name = "password" placeholder="Enter Password" />
+                                                    <input class="form-control" id = "" name = "password" placeholder="Enter Password" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Firstname</label>
@@ -96,7 +96,7 @@
                                                         <option value = "Administrator">Administrator</option>
                                                         <option value = "Medical Technology">Med Tech</option>
                                                         <option value = "Recruitment Officer">Recruitment Officer</option>
-                                                    </select>                                                     
+                                                    </select>                                                       
                                                 </div>
                                                 
                                     
@@ -154,10 +154,9 @@
 	<?php include 'script.php';?>
     <script>
         var password1 = document.getElementById('password1');
-var password2 = document.getElementById('password2');
-
-var checkPasswordValidity = function() {
-    if (password1.value != password2.value) {
+        var password2 = document.getElementById('password2');
+        var checkPasswordValidity = function() {
+        if (password1.value != password2.value) {
         password1.setCustomValidity('Passwords must match.');
     } else {
         password1.setCustomValidity('');
