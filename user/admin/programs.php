@@ -76,7 +76,7 @@
                                                 <div class="form-group">
                                                     <label>Program</label>
                                                     <input class="form-control" name = "program" value="<?=$row['program'];?>" required = "true"/>  
-                                                      <input class="form-control" name = "program_id" value="<?=$row['program_id'];?>" required = "true"/>                                                
+                                                      <input type = "hidden" class="form-control" name = "program_id" value="<?=$row['program_id'];?>" required = "true"/>                                                
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Program Address</label>
