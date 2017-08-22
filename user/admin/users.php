@@ -96,9 +96,7 @@
                                                         <option value = "Administrator">Administrator</option>
                                                         <option value = "Medical Technology">Med Tech</option>
                                                         <option value = "Recruitment Officer">Recruitment Officer</option>
-                                                
-                                                    </select>
-                                                    
+                                                    </select>                                                    
                                                 </div>
                                                 
                                     
