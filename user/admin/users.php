@@ -68,7 +68,7 @@
                                                 <div class="form-group">
                                                     <label>Username</label>                                                    
                                                     <input class="form-control" name = "username" Placeholder = "Create a username.." required = "true" value = "<?=$row['username'];?>"/>
-                                                    <input type = "text" name = "user_id" value = "<?=$row['user_id'];?>">                                                   
+                                                    <input type = "hidden" name = "user_id" value = "<?=$row['user_id'];?>">                                                   
                                                     <p class="help-block">This username account is used for your log in </p>
                                                 </div>
                                                 <div class="form-group">
