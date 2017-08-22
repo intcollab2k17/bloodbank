@@ -10,11 +10,15 @@
 												<div class="form-group">
 													<label>Username</label>
 													<input class="form-control" name = "username" Placeholder = "Create a username.." required = "true"/>
-													<p class="help-block">This username accoun is used for your log in </p>
+													<p class="help-block">This username account is used for your log in </p>
 												</div>
 												<div class="form-group">
 													<label>Password</label>
-													<input class="form-control" name = "password" placeholder="Enter Password" />
+													<input class="form-control" id = "password1" name = "password" placeholder="Enter Password" />
+												</div>
+												<div class="form-group">
+													<label>Confirm Password</label>
+													<input class="form-control" id = "password2" name = "password" placeholder="Enter Password" />
 												</div>
 												<div class="form-group">
 													<label>Firstname</label>

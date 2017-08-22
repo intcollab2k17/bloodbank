@@ -28,7 +28,7 @@
                     </a>
                     <ul class="collapse" id="pagesr-nav">
                         <li><a href="nationality.php"><i class="icon-angle-right"></i> Nationality </a></li>
-                        <li><a href="city.php"><i class="icon-angle-right"></i> Nationality </a></li>
+                        <li><a href="city.php"><i class="icon-angle-right"></i> City </a></li>
                        <!--  <li><a href="pages_timeline.html"><i class="icon-angle-right"></i> Timeline </a></li>
                         <li><a href="pages_social.html"><i class="icon-angle-right"></i> Social </a></li>
                         <li><a href="pages_pricing.html"><i class="icon-angle-right"></i> Pricing </a></li>
