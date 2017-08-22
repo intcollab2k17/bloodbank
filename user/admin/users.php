@@ -55,64 +55,6 @@
 												<a href="#editUser<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#editUser<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
 											</td>
                                         </tr> 
-                                        <div class="modal fade" id="editUser<?= $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="H2">Modal Form</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                        <form method = "POST" action = "edit_user.php" enctype ="multipart/form-data">
-                                                <div class="form-group">
-                                                    <label>Username</label>
-                                                    <input class="form-control" name = "username" Placeholder = "Create a username.." required = "true"/>
-                                                    <p class="help-block">This username account is used for your log in </p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Password</label>
-                                                    <input class="form-control" id = "password11" name = "password" placeholder="Enter Password" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Confirm Password</label>
-                                                    <input class="form-control" id = "password12" name = "password" placeholder="Enter Password" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Firstname</label>
-                                                    <input class="form-control" name = "user_first" Placeholder = "Specify your Firstname" required = "true"/>
-                                                </div> 
-                                                <div class="form-group">
-                                                    <label>Middlename</label>
-                                                    <input class="form-control" name = "user_middle" Placeholder = "Specify your Firstname" required = "true"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Lastname</label>
-                                                    <input class="form-control" name = "user_last" Placeholder = "Specify your Firstname" required = "true"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>User Type</label>
-                                                    <select class = "form-control" name = "user_type" required>
-                                                        <option></option>                                                       
-                                                        <option value = "Administrator">Administrator</option>
-                                                        <option value = "Medical Technology">Med Tech</option>
-                                                        <option value = "Recruitment Officer">Recruitment Officer</option>
-                                                    </select>                                                       
-                                                </div>
-                                                
-                                    
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button name = "save_user" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </form>
-                                    </div>
-                                </div>
-                     </div>
-
-
-
-
 										<?php }?>									
                                     </tbody>
                                 </table>
@@ -154,9 +96,10 @@
 	<?php include 'script.php';?>
     <script>
         var password1 = document.getElementById('password1');
-        var password2 = document.getElementById('password2');
-        var checkPasswordValidity = function() {
-        if (password1.value != password2.value) {
+var password2 = document.getElementById('password2');
+
+var checkPasswordValidity = function() {
+    if (password1.value != password2.value) {
         password1.setCustomValidity('Passwords must match.');
     } else {
         password1.setCustomValidity('');
@@ -164,20 +107,6 @@
 };
 
 password1.addEventListener('change', checkPasswordValidity, false);
-    </script>
-
-     <script>
-        var password11 = document.getElementById('password11');
-        var password12 = document.getElementById('password12');
-        var checkPasswordValidity = function() {
-        if (password11.value != password12.value) {
-        password11.setCustomValidity('Passwords must match.');
-    } else {
-        password11.setCustomValidity('');
-    }        
-};
-
-password11.addEventListener('change', checkPasswordValidity, false);
     </script>
 </body>
     <!-- END BODY-->
