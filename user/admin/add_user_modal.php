@@ -18,7 +18,7 @@
 												</div>
 												<div class="form-group">
 													<label>Confirm Password</label>
-													<input class="form-control" id = "password2" name = "password" placeholder="Enter Password" />
+													<input class="form-control" id = "password2" name = "password" placeholder="Enter Password" /> 
 												</div>
 												<div class="form-group">
 													<label>Firstname</label>

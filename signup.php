@@ -291,7 +291,7 @@ Login.init();
 Demo.init();
  ComponentsPickers.init();
 });
-</script>
+</script> 
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

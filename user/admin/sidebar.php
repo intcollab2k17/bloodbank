@@ -24,7 +24,7 @@
                 <li><a href="inventory.php"><i class="icon-calendar"></i> Inventory</a></li>
                 <li class="panel">
                     <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#pagesr-nav">
-                        <i class="icon-wrench"></i> Maintenance
+                        <i class="icon-wrench"></i> Maintenance 
                     </a>
                     <ul class="collapse" id="pagesr-nav">
                         <li><a href="nationality.php"><i class="icon-angle-right"></i> Nationality </a></li>
