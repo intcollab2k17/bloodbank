@@ -63,7 +63,7 @@
                                             <h4 class="modal-title" id="H2">Modal Form</h4>
                                         </div>
                                         <div class="modal-body">
-                                        <form method = "POST" action = "add_user.php" enctype ="multipart/form-data">
+                                        <form method = "POST" action = "edit_user.php" enctype ="multipart/form-data">
                                                 <div class="form-group">
                                                     <label>Username</label>
                                                     <input class="form-control" name = "username" Placeholder = "Create a username.." required = "true"/>
@@ -71,11 +71,11 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input class="form-control" id = "" name = "password" placeholder="Enter Password" />
+                                                    <input class="form-control" id = "password11" name = "password" placeholder="Enter Password" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
-                                                    <input class="form-control" id = "" name = "password" placeholder="Enter Password" />
+                                                    <input class="form-control" id = "password12" name = "password" placeholder="Enter Password" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Firstname</label>
@@ -164,6 +164,20 @@
 };
 
 password1.addEventListener('change', checkPasswordValidity, false);
+    </script>
+
+     <script>
+        var password11 = document.getElementById('password11');
+        var password12 = document.getElementById('password12');
+        var checkPasswordValidity = function() {
+        if (password11.value != password12.value) {
+        password11.setCustomValidity('Passwords must match.');
+    } else {
+        password11.setCustomValidity('');
+    }        
+};
+
+password11.addEventListener('change', checkPasswordValidity, false);
     </script>
 </body>
     <!-- END BODY-->
