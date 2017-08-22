@@ -95,17 +95,37 @@
     <!-- END GLOBAL SCRIPTS -->
 	<?php include 'script.php';?>
     <script>
-        var password1 = document.getElementById('password1');
-var password2 = document.getElementById('password2');
-
-var checkPasswordValidity = function() {
-    if (password1.value != password2.value) {
-        password1.setCustomValidity('Passwords must match.');
-    } else {
-        password1.setCustomValidity('');
-    }        
-};
-password1.addEventListener('change', checkPasswordValidity, false);
+       (function() {
+    var password1 = document.getElementById('password1');
+    var password2 = document.getElementById('password2');
+    var form = document.getElementById('passwordForm');
+    
+    var checkPasswordValidity = function() {
+        if (password1.value != password2.value) {
+            password1.setCustomValidity('Passwords must match.');
+            updateErrorMessage();
+        } else {
+            password1.setCustomValidity('');
+        }        
+    };
+    
+    var updateErrorMessage = function() {
+        form.getElementsByClassName('error')[0].innerHTML = password1.validationMessage;
+    };
+    
+    password1.addEventListener('change', checkPasswordValidity, false);
+    password2.addEventListener('change', checkPasswordValidity, false);
+    
+    form.addEventListener('submit', function(event) {
+        if (form.classList) form.classList.add('submitted');
+        checkPasswordValidity();
+        if (!this.checkValidity()) {
+            event.preventDefault();
+            updateErrorMessage();
+            password1.focus();  
+        }
+    }, false);
+}());
     </script>
 </body>
     <!-- END BODY-->
