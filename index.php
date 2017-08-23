@@ -1,10 +1,14 @@
 <?php include 'header.php';?>
+<link type="text/css" rel="stylesheet" href="jscript/style.css"/>
+<script src="jscript/jquery.min.js"></script>
 <!--DOC: menu-always-on-top class to the body element to set menu on top -->
 <body class = "menu-always-on-top">
  
 	<?php include 'mobile_nav.php';?>
  
 	<?php include 'slider.php';?>
+	
+	<?php include 'calendar.php';?>
  
   <div class="about-block content content-center" id="about">
     <div class="container">
