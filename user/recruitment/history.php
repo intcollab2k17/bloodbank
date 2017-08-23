@@ -14,7 +14,7 @@
                                 </thead>
                                 <tbody>
 <?php
-    $query=mysqli_query($con,"select * from donation natural join blood_exam where donor_id ='$did' order by donation_date desc")or die(mysqli_error($con));
+    $query=mysqli_query($con,"select * from donation natural join blood_exam where donor_id ='$donor_id' order by donation_date desc")or die(mysqli_error($con));
             $i=1;
             while($row=mysqli_fetch_array($query))
             {

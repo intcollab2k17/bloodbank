@@ -17,6 +17,7 @@
                     </a>                   
                 </li>
                 <li><a href="daily.php"><i class="icon-calendar"></i> Daily Transaction </a></li>
+                <li><a href="donors_list.php"><i class="icon-calendar"></i> Donors List </a></li>
                
             </ul>
 

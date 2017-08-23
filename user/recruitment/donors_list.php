@@ -2,7 +2,13 @@
  include 'header.php';
  include 'session.php';
  ?>
-
+<style>
+   #content {
+    width: 82.5%;
+    float: left;
+    background: transparent !important;
+    } 
+</style>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
 <body class="padTop53 " >
@@ -75,14 +81,7 @@
                 <hr>
             </div>
         </div>
-       <!--END PAGE CONTENT -->
-          <!-- RIGHT STRIP  SECTION -->
-        <div id="right">
-            <div class="well well-small">
-                <button class = "btn btn-success btn-block" data-toggle="modal" data-target="#uiModal"><i class = "icon-plus"></i> Add User</button>
-            </div>
-         
-        </div>
+    
          <!-- END RIGHT STRIP  SECTION -->
 
     </div>

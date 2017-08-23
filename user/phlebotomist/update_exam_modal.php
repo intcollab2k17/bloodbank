@@ -32,7 +32,17 @@
 												<input type = "hidden" value = "<?php echo $user_row['user_first']. ' ' .$user_row['user_last'];?>" name = "phlebotomist">
 												<div class="form-group">
 													<label>Blood Type</label>
-													<input type="text" class="form-control" name = "blood_type" Placeholder = "blood type" required = "true"/></textarea>
+													<select class = "form-control" name = "blood_type">
+														<option disabled></option>
+														<option >A+</option>
+														<option >A-</option>
+														<option >AB+</option>
+														<option >AB-</option>
+														<option >B+</option>
+														<option >B-</option>
+														<option >O+</option>
+														<option >O-</option>
+													</select>
 												</div>
 												<div class="form-group">
 													<input type = "hidden" value = "<?php echo $user_row['user_first']. ' ' .$user_row['user_last'];?>" name = "screened_by">												
@@ -40,10 +50,22 @@
 												<div class="form-group">
 													<label>Hematocrit</label>
 													<input type  = "text" class="form-control" name = "hematocrit" Placeholder = "hematocrit" required = "true"/>
+													<select class = "form-control" name = "hematocrit">
+														
+														<?php 
+														for($x=0.01;$x<=0.20;$x=$x+0.01)
+															{
+																echo "<option>$x</option>";
+															}
+															 ?>
+																									
+															
+													</select>
 												</div>	
 												<div class="form-group">
 													<label>Expiry</label>
 													<input type  = "date" class="form-control" name = "expiry" id = "datepicker" Placeholder = "hematocrit" required = "true"/>
+
 												</div>					
                                         </div>
                                         <div class="modal-footer">
