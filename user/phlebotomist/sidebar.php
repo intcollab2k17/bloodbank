@@ -11,11 +11,11 @@
                 <br />
             </div>
             <ul id="menu" class="collapse">                
-                <li class="panel active">
+                <!-- <li class="panel active">
                     <a href="donor_exam_final.php" >
                         <i class="icon-table"></i> Dashboard                       
                     </a>                   
-                </li>
+                </li> -->
                 <li><a href="daily.php"><i class="icon-calendar"></i> Daily Transaction </a></li>
                 <li><a href="donors_list.php"><i class="icon-calendar"></i> Donors List </a></li>
                

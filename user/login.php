@@ -35,7 +35,7 @@ $query=mysqli_query($con,"select * from user where username='$user' and password
 					echo "<script type='text/javascript'>document.location='recruitment/home.php'</script>";  
 			  	}
 			  	if($user_type == 'Phlebotomist'){
-					echo "<script type='text/javascript'>document.location='phlebotomist/home.php'</script>";  
+					echo "<script type='text/javascript'>document.location='phlebotomist/daily.php'</script>";  
 			  	}	
 			  }
 			  
