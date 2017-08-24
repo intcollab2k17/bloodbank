@@ -50,7 +50,7 @@
                                         $query1=mysqli_query($con,"select * from donation natural join survey natural join donor natural join program  where survey_status='Accepted' and donation_id NOT IN(select donation_id from physical_exam) ORDER BY survey_id ASC")or die(mysqli_error($con));
                                         while ($row=mysqli_fetch_array($query1)){
                                             $did=$row['donation_id'];
-                                            $sid=$row['survey_id'];                                       
+                                            $sid	=$row['survey_id'];                                       
 
                                     ?>  
                                         <tr class="odd gradeX">

@@ -17,7 +17,7 @@ include('session.php');
 	 mysqli_query($con,"INSERT INTO blood_exam(blood_bag_type,segment_number,time_started,time_ended,user_id,blood_type,hematocrit,expiry,donation_id)	
 			VALUES('$blood_bag_type','$segment_number','$time_started','$time_ended','$session_id','$blood_type', '$hematocrit', '$expiry', '$did')")or die(mysqli_error($con)); 
 		echo "<script type='text/javascript'>alert('Successfully updated donation details!');</script>";
-		echo "<script>document.location='donor_exam_final.php'</script>";
+		echo "<script>document.location='donors_list.php'</script>";
 	
 } 
 

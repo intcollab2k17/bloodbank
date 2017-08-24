@@ -9,12 +9,12 @@
                                         <form method = "POST" action = "add_schedule.php" enctype ="multipart/form-data">
 													<div class="form-group">
 														<label>Date</label>													
-															<input type="text" class="form-control" name = "date_start" data-date-format="mm/dd/yy" id="dp2" />										
+															<input type="date" class="form-control" name = "date_start" id="dp2" />										
 													</div>	
 										
 													<div class="form-group">
 														<label>Date Ended</label>													
-															<input type="text" class="form-control" name = "date_end" data-date-format="mm/dd/yy" id="dp1" />										
+															<input type="date" class="form-control" name = "date_end"  id="dp1" />										
 													</div>
 									
 												 <div class="form-group">

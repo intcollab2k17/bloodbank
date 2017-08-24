@@ -49,7 +49,6 @@
 												</div>
 												<div class="form-group">
 													<label>Hematocrit</label>
-													<input type  = "text" class="form-control" name = "hematocrit" Placeholder = "hematocrit" required = "true"/>
 													<select class = "form-control" name = "hematocrit">
 														
 														<?php 

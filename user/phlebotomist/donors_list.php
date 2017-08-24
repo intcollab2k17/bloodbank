@@ -46,13 +46,13 @@
                                     </thead>
                                     <tbody>
 									<?php	
-										$query1=mysqli_query($con,"select * from blood_exam LEFT JOIN donor ON donor.donor_id = physical_exam.donor_id")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select * from blood_exam LEFT JOIN donor ON donor.donor_id = blood_exam.donation_id ")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
-											$id=$row['exam_id'];										
+											$id=$row['blood_exam_id'];										
 									?>  
                                         <tr class="odd gradeX">
                                             <td><?php echo $row['donor_first']. " " .$row['donor_middle']. " " .$row['donor_last'];?></td>
-											<td><a href = "view_donor_exam.php?exam_id=<?php echo $row['exam_id'];?>">View record</a></td>
+											<td><a href = "view_donor_exam.php?blood_exam_id=<?php echo $row['blood_exam_id'];?>">View record</a></td>
                                         </tr> 
 									
 									
@@ -71,15 +71,6 @@
             </div>
         </div>
        <!--END PAGE CONTENT -->
-          <!-- RIGHT STRIP  SECTION -->
-        <div id="right">
-            <div class="well well-small">
-                <button class = "btn btn-success btn-block" data-toggle="modal" data-target="#uiModal"><i class = "icon-plus"></i> Add User</button>
-            </div>
-         
-        </div>
-         <!-- END RIGHT STRIP  SECTION -->
-
     </div>
 
      <!--END MAIN WRAPPER -->

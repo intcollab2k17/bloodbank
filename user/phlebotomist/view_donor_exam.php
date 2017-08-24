@@ -3,13 +3,13 @@
 
 <?php
 
- if(isset($_REQUEST['exam_id']))
+ if(isset($_REQUEST['blood_exam_id']))
     {
-   $exam_id=$_REQUEST['exam_id'];
+   $blood_exam_id=$_REQUEST['blood_exam_id'];
     }
       else
      {
-    $exam_id=$_POST['exam_id'];
+    $blood_exam_id=$_POST['blood_exam_id'];
     }
  ?>
  <body>
@@ -17,18 +17,18 @@
 	<div class = "row">	
 		<div class = "col-lg-12 col-md-12">
 			<?php include 'dbcon.php';
-			$query1=mysqli_query($con,"select * from physical_exam WHERE exam_id = '$exam_id'")or die(mysqli_error());
+			$query1=mysqli_query($con,"select * from blood_exam WHERE blood_exam_id = '$blood_exam_id'")or die(mysqli_error());
 			$row1=mysqli_fetch_assoc($query1);			
 		?>
 		<h4>FOR BLOOD BANK USE ONLY</h4>
 			<div class = "pull-left col-md-6">
-				<span class = "col-lg-6">Body Weight : <?=$row1['weight'];?> </span> 
-				<span class = "col-md-6">Blood Pressure : <?=$row1['blood_pressure'];?></span>
+				<span class = "col-lg-6">Blood Bag : <?=$row1['blood_bag_type'];?> </span> 
+				<span class = "col-md-6">Segment Number : <?=$row1['segment_number'];?></span>
 			
 			</div>
 			<div class = "pull-right col-md-6">
-				<span class = "col-lg-6">Pulse rate : <?=$row1['pulse_rate'];?> </span> 
-				<span class = "col-md-6">Temperature : <?=$row1['temp'];?>&deg;</span>
+				<span class = "col-lg-6">Time Started : <?=$row1['time_started'];?> </span> 
+				<span class = "col-md-6">Time Ended : <?=$row1['time_ended'];?></span>
 			</div>
 			
 			<div class = "clear-fix col-md-12">
@@ -37,10 +37,10 @@
 			<br/>
 			</div>				
 			<div class = "col-md-8 pull-left">
-				<div class = "col-md-12">General Appearance: <?=$row1['gen_appearance'];?></div>
+				<div class = "col-md-12">Blood Types: <?=$row1['blood_type'];?></div>
 			</div>
 			<div class = "col-md-4 pull-right">
-				<div class = "col-md-8">Skin: <?=$row1['skin'];?></div>
+				<div class = "col-md-8">Hematocrit: <?=$row1['hematocrit'];?></div>
 			</div>
 			
 			<div class = "clear-fix col-md-12">
@@ -48,8 +48,9 @@
 			
 			</div>	
 			<div class = "col-md-6 pull-left">
-				<div class = "col-md-12">Heent: <?=$row1['heent'];?></div>
+				<div class = "col-md-12">Expiry: <?=$row1['expiry'];?></div>
 			</div>
+			<!--
 			<div class = "col-md-6 pull-right">
 				<div class = "col-md-8">Heart &amp; Lungs: <?=$row1['heart_lungs'];?></div>
 			</div>
@@ -73,7 +74,7 @@
 			<div class = "col-md-12 pull-left">
 				<div class = "col-md-12">Reasons for deferral: <span style = "text-decoration:underline;"><?=$row1['reasons_for_deferral'];?></span></div>
 			</div>
-			
+			-->
 			
 			<div class = "space7 col-md-12">
 			&nbsp;
