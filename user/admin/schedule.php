@@ -1,6 +1,7 @@
 <?php
  include 'session.php';
  include 'header.php';
+
  ?>
 
     <!-- END  HEAD-->
@@ -66,6 +67,43 @@
 												<a href="#update<?php echo $id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $id;?>"><i class = "fa fa-pencil"></i> Edit</a>
 											</td>
                                         </tr> 
+                                        <div class="modal fade" id="update<?=$id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="H2">Edit Schedule</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form method = "POST" action = "edit_schedule.php" enctype ="multipart/form-data">
+                                                <div class="form-group">
+                                                    <input type = "text" name = "sched_id" value = "<?=$row['sched_id'];?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Date Start</label>
+                                                    <input class="form-control" type = "date" name = "sched_date" value = "<?=$row['sched_date'];?>"/>
+                                                </div>                                               
+                                                <div class="form-group">
+                                                    <label>Date End</label>
+                                                    <input class="form-control" type = "date" name = "date_end" Placeholder = "Specify your Firstname" required = "true" value = "<?=$row['date_end'];?>"/> 
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label>Time Start</label>
+                                                    <input class="form-control" type = "time" name = "start_time" Placeholder = "Specify your Midllename" required = "true" value = "<?=$row['start_time'];?>" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Time End</label>
+                                                    <input class="form-control" type = "time" name = "end_time" Placeholder = "Specify your Last name" required = "true" value = "<?=$row['end_time'];?>"/>
+                                                </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button name = "save_user" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                             </div>
 										<?php }?>									
                                     </tbody>
                                 </table>
@@ -86,6 +124,7 @@
             <div class="well well-small">
                 <button class = "btn btn-success btn-block" data-toggle="modal" data-target="#schedule"><i class = "icon-calendar"></i> Add Schedule</button>
             </div>
+
            <?php include 'add_schedule_modal.php';?> 
         </div>
          <!-- END RIGHT STRIP  SECTION -->
@@ -102,9 +141,10 @@
      <!-- GLOBAL SCRIPTS -->
     <!-- END GLOBAL SCRIPTS -->
 	<?php include 'script.php';?>
-	    <script>
-            $(function () { formInit(); });
+        <script>
+     
         </script>
+	
 </body>
     <!-- END BODY-->
     

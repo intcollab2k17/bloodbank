@@ -13,7 +13,7 @@
 		<script src="../assets/plugins/validVal/js/jquery.validVal.min.js"></script>
 		<script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
 		<script src="../assets/plugins/daterangepicker/moment.min.js"></script>
-		<script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 		<script src="../assets/plugins/timepicker/js/bootstrap-timepicker.min.js"></script>
 		<script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 		<script src="../assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js"></script>
@@ -25,7 +25,11 @@
          $(document).ready(function () {
              $('#dataTables-example').dataTable();
          });
-    </script>
+           $('#newDAte').datepicker({
+                    format: 'mm/dd/yyyy'
+               
+                });
+  		  </script>
 	
 	
         
