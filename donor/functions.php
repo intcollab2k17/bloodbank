@@ -33,7 +33,7 @@ function getCalender($year = '',$month = '')
         <div id="event_add" class="none">
         	<p>&nbspAdd Event On <span id="eventDateView"></span></p>
             <p><b>Add Event Name: </b><input type="text" id="eventTitle" style = "height:30px;  width:250px;" value=""/></p>
-            <input type="hidden" id="eventDate  value=""/>
+            <input type="hidden" id="eventDate" value=""/>
             <input type="button" id="addEventBtn"  style = "margin-top:-41px; margin-left:370px;" class = "btn blue" value="ADD"/>
         </div>
 		<div style  = "margin-top:-50px;">
@@ -72,9 +72,9 @@ function getCalender($year = '',$month = '')
 						echo '</span>';
 						echo '<div id="date_popup_'.$currentDate.'" class="date_popup_wrap none">';
 						echo '<div class="date_window">';
-						echo '<div class="popup_event">EVENTS ('.$eventNum.')</div>';
+						echo '<div class="popup_event" style = "margin-top:-15px;">EVENTS ('.$eventNum.')</div>';
 						echo ($eventNum > 0)?'<a href="javascript:;" onclick="getEvents(\''.$currentDate.'\');">View Events</a><br/>':'';
-						echo '<a href="javascript:;" onclick="addEvent(\''.$currentDate.'\');">Add Event</a>';
+						echo '<a href="javascript:;" onclick="addEvent(\''.$currentDate.'\');">Add Event</a><br/>';
 						echo '</div></div>';
 						echo '</li>';
 						$dayCount++;
@@ -85,6 +85,7 @@ function getCalender($year = '',$month = '')
 			</ul>
 		</div>
 	</div>
+	
 	<script type="text/javascript">
 		function getCalendar(target_div,year,month){
 			$.ajax({
@@ -109,6 +110,57 @@ function getCalender($year = '',$month = '')
 				}
 			});
 		}
+		
+		
+		function editEvent(date){
+			$('#eventDate').val(date);
+			$('#eventDateView').html(date);
+			$('#event_list').slideUp('slow');
+			$('#event_add').slideDown('slow');
+			$('#event_edit').slideUp('slow');
+		}
+		$(document).ready(function(){
+			$('#editEventBtn').on('click',function(){
+				var date = $('#eventDate').val();
+				var title = $('#eventTitle').val();
+				$.ajax({
+					type:'POST',
+					url:'functions.php',
+					data:'func=editEvent&date='+date+'&title='+title,
+					success:function(msg){
+						if(msg == 'ok'){
+							var dateSplit = date.split("-");
+							$('#eventTitle').val('');
+							alert('Event Edited Successfully.');
+							getCalendar('calendar_div',dateSplit[0],dateSplit[1]);
+						}else{
+							alert('Some problem occurred, please try again.');
+						}
+					}
+				});
+			});
+		});
+		$(document).ready(function(){
+			$('.date_cell').mouseenter(function(){
+				date = $(this).attr('date');
+				$(".date_popup_wrap").fadeOut();
+				$("#date_popup_"+date).fadeIn();	
+			});
+			$('.date_cell').mouseleave(function(){
+				$(".date_popup_wrap").fadeOut();		
+			});
+			$('.month_dropdown').on('change',function(){
+				getCalendar('calendar_div',$('.year_dropdown').val(),$('.month_dropdown').val());
+			});
+			$('.year_dropdown').on('change',function(){
+				getCalendar('calendar_div',$('.year_dropdown').val(),$('.month_dropdown').val());
+			});
+			$(document).click(function(){
+				$('#event_list').slideUp('slow');
+			});
+		});
+		
+		
 		function addEvent(date){
 			$('#eventDate').val(date);
 			$('#eventDateView').html(date);

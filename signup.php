@@ -30,6 +30,14 @@
 <link href="assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
+<script>
+function confirm(){
+	if($('#register_password').val() != $('#cpwd').val()){
+		var data = '<div style = "color:red;">confirm password not match</div>';
+		$('#conpass').append(data);
+	}
+}
+</script>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -84,7 +92,7 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label class="control-label visible-ie8 visible-ie9">Age</label>
-					<input class="form-control form-control-inline input-medium" type="text" name="donor_age" required placeholder="Age">
+					<input class="form-control form-control-inline input-medium" type="text"  maxlength = "2" name="donor_age" required placeholder="Age">
 					<span class="help-block">
 						Insert Age 
 					</span>
@@ -113,7 +121,7 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label class="control-label visible-ie8 visible-ie9">Contact #</label>
-					<input class="form-control placeholder-no-fix" type="text" placeholder="Contact #" name="contact"/>
+					<input class="form-control placeholder-no-fix" type="text" pattern = "{09}[11]" maxlength = "11" placeholder="Contact #" name="contact"/>
 				</div>
 			</div>
 		</div>
@@ -121,7 +129,7 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label class="control-label visible-ie8 visible-ie9">Telephone #</label>
-					<input class="form-control placeholder-no-fix" type="text" placeholder="Telephone #" name="telephone"/>
+					<input class="form-control placeholder-no-fix" type="text"  maxlength = "7" placeholder="Telephone #" name="telephone"/>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -146,10 +154,6 @@
 					</select>
 				</div>
 			</div>
-<<<<<<< HEAD
-			
-=======
->>>>>>> 7d44b80a444eb751df68796233dd85d9bf0cb62c
 		</div>
 		<div class="row">
 			<div class="col-md-12">
@@ -209,16 +213,17 @@
 					<input class="form-control placeholder-no-fix" type="email" placeholder="Email" name="email" required/>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class = "col-md-4">
+			<div class="form-group">
+			<label class="control-label visible-ie8 visible-ie9">Password</label>
+			<input class="form-control placeholder-no-fix" type="password" minlength="8" autocomplete="off" id="register_password" value="<?php if(isset($_POST['donor_password'])){echo $_POST['donor_password'];} ?>" placeholder="Password" name="password" required = "required"/>
+		</div>
+		</div>
+			<div class = "col-md-4">
 				<div class="form-group">
-					<label class="control-label visible-ie8 visible-ie9">Password</label>
-					<input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password" required/>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="form-group">
-					<label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
-					<input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" required/>
+					<label class="control-label visible-ie8 visible-ie9">Confirm Password</label>
+					<input class="form-control placeholder-no-fix" type="password" id = "cpwd" value="<?php if(isset($_POST['donor_confirm_password'])){echo $_POST['donor_confirm_password'];} ?>" minlength="8" autocomplete="off" placeholder="Re-type Your Password" onchange="confirm()" name="donor_confirm_password" required = "required"/>
+					<p id="conpass"></p>
 				</div>
 			</div>
 		</div>

@@ -1,10 +1,10 @@
 <?php 
- 
 	  $donor_first=$_POST['first'];
 	  $donor_last=$_POST['last'];
 	  $donor_middle =$_POST['mi'];
 	  $donor_email =$_POST['email'];
 	  $donor_password =$_POST['password'];
+	  $donor_confirm_password =$_POST['donor_confirm_password'];
 	  $donor_occupation =$_POST['occupation'];
 	  $donor_address =$_POST['address'];
 	  $donor_province =$_POST['province'];
@@ -65,6 +65,7 @@
 						donor_tel,
 						donor_email,
 						donor_password,
+						donor_confirm_password,
 						donor_nationality,						
 						donor_occupation,
 						donor_address,
@@ -83,6 +84,7 @@
 						'$donor_tel',
 						'$donor_email',
 						'$donor_password',
+						'$donor_confirm_password',
 						'$donor_nationality',						
 						'$donor_occupation',
 						'$donor_address',

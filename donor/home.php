@@ -31,13 +31,11 @@
 						<!-- BEGIN PORTLET-->
 								<h3 align="center">EVENT CALENDAR</h3>
 							<div  class = "porlet-body" style = "margin-left:138px;">
-							<?php
-							include_once('functions.php');
-							echo getCalender(); ?>
-								</div>
-								
-							
-						
+									<?php
+									include_once('functions.php');
+									echo getCalender(); 
+									?>
+							</div>
 						<!-- END PORTLET-->
 					</div>						
 					</div>
