@@ -64,7 +64,11 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Gender*</label>
-            <input type="text" class="form-control input-sm" name = "gender" id="gender" placeholder="">
+           	<select name = "gender" class="form-control input-sm age">
+           		<option selected="" disabled=""></option>
+           		<option>Male</option>
+           		<option>Female</option>
+           	</select>
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Contact Number*</label>
@@ -72,7 +76,7 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Telephone Number*</label>
-            <input type="text" class="form-control input-sm" name = "telephone" id="tel" placeholder="">
+            <input type="text" class="form-control input-sm"  maxlength = "9" name = "telephone" id="tel" placeholder="">
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Occupation*</label>
