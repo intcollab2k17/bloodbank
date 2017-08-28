@@ -3,15 +3,14 @@
 	  $donor_last=$_POST['last'];
 	  $donor_middle =$_POST['mi'];
 	  $donor_email =$_POST['email'];
-	  $donor_password =$_POST['password'];
-	  $donor_confirm_password =$_POST['donor_confirm_password'];
-	  $donor_occupation =$_POST['occupation'];
+	  $donor_password =$_POST['password'];	 
+	  $donor_occupation =$_POST['donor_occupation'];
 	  $donor_address =$_POST['address'];
 	  $donor_province =$_POST['province'];
 	  $donor_tel =$_POST['telephone'];
 	  $donor_city =$_POST['city'];
 	  $donor_nationality =$_POST['nationality'];
-	  $donor_age =$_POST['donor_age'];
+	  $donor_age =$_POST['age'];
 	  $donor_contact =$_POST['contact'];
 	  $donor_telephone =$_POST['telephone'];
 	  $donor_gender =$_POST['gender'];
@@ -64,8 +63,7 @@
 						donor_contact,
 						donor_tel,
 						donor_email,
-						donor_password,
-						donor_confirm_password,
+						donor_password,						
 						donor_nationality,						
 						donor_occupation,
 						donor_address,
@@ -83,8 +81,7 @@
 						'$donor_contact',
 						'$donor_tel',
 						'$donor_email',
-						'$donor_password',
-						'$donor_confirm_password',
+						'$donor_password',						
 						'$donor_nationality',						
 						'$donor_occupation',
 						'$donor_address',
@@ -131,8 +128,8 @@
 
 							mail($to,$subject,$message,$headers);
 	
-						echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
-						echo "<script>document.location='login.html';</script>";
+					echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
+					echo "<script>document.location='login.html';</script>";
 				}
 
 

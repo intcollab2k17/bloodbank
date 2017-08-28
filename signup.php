@@ -9,11 +9,13 @@
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <style type="text/css">
 #deceased{
     background-color:#FFF3F5;
@@ -54,11 +56,11 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Birthday*</label>
-            <input type="text" class="form-control input-sm" name = "bday" id="bday" placeholder="">
+            <input type="text" class="form-control input-sm datepicker" name = "bday" id="bday" placeholder="">
         </div>
         <div class="form-group col-md-6 col-sm-6">
-            <label for="mobile">Birthday*</label>
-            <input type="number" max-length = "3" class="form-control input-sm" name = "age" id="age" placeholder="">
+            <label for="mobile">Age*</label>
+            <input type="text" maxlength = "3" class="form-control input-sm age" name = "age" id="age" placeholder="">
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Gender*</label>
@@ -74,7 +76,7 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Occupation*</label>
-            <input type="text" class="form-control input-sm" name = "contact" id="contact" placeholder="">
+            <input type="text" class="form-control input-sm" name = "donor_occupation" id="contact" placeholder="">
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Nationality*</label>
@@ -122,6 +124,7 @@
             <label for="state">Province*</label>
             <input type="text" class="form-control input-sm"  name  = "province" id="province" placeholder="">
      </div>
+     
      <div class="form-group col-md-6 col-sm-6">
             <label for="state">Email*</label>
             <input type="email" class="form-control input-sm"  name  = "email" id="email" placeholder="" required="true">
@@ -150,5 +153,36 @@
 </div>
 </form>
 </div>
+<script>
+	$('.datepicker').datepicker({
+    	format: 'mm/dd/yyyy'
+    	
+	});
+	var password1 = document.getElementById('password1');
+	var password2 = document.getElementById('password2');
+	var checkPasswordValidity = function() {	
+    if (password1.value != password2.value) {
+        password1.setCustomValidity('Passwords must match.');
+    } else {
+        password1.setCustomValidity('');
+    }        
+	};
+	password1.addEventListener('change', checkPasswordValidity, false);
+	password2.addEventListener('change', checkPasswordValidity, false);
+
+	$(document).ready(function () {
+  //called when key is pressed in textbox
+  $(".age").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+});
+
+
+</script>
 </body>
 </html>
