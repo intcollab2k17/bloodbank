@@ -128,7 +128,7 @@
 
 							mail($to,$subject,$message,$headers);
 	
-					echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
+					 echo "<script type='text/javascript'>alert('Successfully registered as a donor in NIR Blood Bank! You may now login!');</script>";
 					echo "<script>document.location='login.html';</script>";
 				}
 
