@@ -94,7 +94,7 @@
             $rowa=mysqli_fetch_array($avail);
 ?>                     
             <div class="well text-center">
-                <a class="quick-btn" href="#">
+                <a class="quick-btn" href="available_blood.php">
                     <i class="icon-tint icon-5x text-blue"></i>
                         <span> Available </span>
                         <span class="label label-success icon-2x" style="margin-right: -20px">

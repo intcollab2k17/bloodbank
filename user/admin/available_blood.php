@@ -39,11 +39,12 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Donor Full name</th>
+                                            <!-- <th>Donor Full name</th> -->
                                             <th>Blood Type Donated</th>
                                             <th>Date Donated</th>
                                             <th>Blood Bag Type</th>
                                             <th>Segment Number</th>
+                                            <th>Donation Date</th>
                                             <th>Date Expired</th>
                                         </tr>
                                     </thead>
@@ -52,21 +53,21 @@
 									include 'dbcon.php';
                                     date_default_timezone_set("Asia/Manila"); 
                                      $date = date("Y-m-d");
-                                    $expiring = date("Y-m-d",strtotime($date. " + 30 days")); 								
+                                    $expiring = date("Y-m-d",strtotime($date)); 								
                                    
-										$query1=mysqli_query($con,"select * FROM blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE blood_exam.expiry <= '$expiring'")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select * FROM blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id")or die(mysqli_error($con));
                                         while ($row=mysqli_fetch_array($query1)){
                                             
 									?>  
                                         <tr class="odd gradeX">
-                                            <td><?php echo $row['donor_first']. " ".$row['donor_middle']." ".$row['donor_last'];?></td>
+                                           <!--  <td><?php echo $row['donor_first']. " ".$row['donor_middle']." ".$row['donor_last'];?></td> -->
                                             <td><?php echo $row['blood_type'];?></td>
                                             <td><?php echo $row['donation_date'];?></td>
                                             <td><?php echo $row['blood_bag_type'];?></td>
                                             <td><?php echo $row['segment_number'];?></td>
-                                            
+                                            <td><?php echo date("F d, Y", strtotime($row['donation_date']));?></td>
+                                           <td> <?php echo date("l, F d, Y", strtotime($row['expiry']. '+ 30 days')); ?></td>
 
-                                           <td> <?php echo date("l, F d, Y", strtotime($row['expiry']. '+ 3 days')); ?></td>
                                         </tr> 
 										<?php }?>									
                                     </tbody>

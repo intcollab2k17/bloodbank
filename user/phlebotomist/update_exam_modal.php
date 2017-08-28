@@ -8,7 +8,7 @@
                                         <div class="modal-body">
                                         <form method = "POST" action = "update_exam.php" enctype ="multipart/form-data">
 												<div class="form-group">
-												<input type = "hidden" name = "did" value = "<?php echo $did;?>">
+												<input type = "text" name = "did" value = "<?php echo $did;?>">
 													<label>Blood Bag</label>
 													<select name = "blood_bag_type" class = "form-control">
 														<option></option>
@@ -63,9 +63,14 @@
 												</div>	
 												<div class="form-group">
 													<label>Expiry</label>
-													<input type  = "date" class="form-control" name = "expiry" id = "datepicker" Placeholder = "hematocrit" required = "true"/>
+													<?php 
+														$date = date('Y-m-d');
+														$expiring = date("Y-m-d",strtotime($date. " + 30 days")); 	 
+													?>
+													<input type  = "text" class="form-control" name = "expiry" id = "datepicker" Placeholder = "hematocrit" required = "true" value = "<?=$expiring;?>"/>
 
-												</div>					
+												</div>		
+												<input type = "hidden" name = "donation_status" value = "Done">		
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
