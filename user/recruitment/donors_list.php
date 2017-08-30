@@ -55,7 +55,7 @@
                                     <tbody>
 									<?php	
 									//include 'dbcon.php';								
-										$query1=mysqli_query($con,"select * from donor order by donor_last")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select * from donation NATURAL JOIN donor order by donor_last")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
 											$id=$row['donor_id'];										
 									?>  
@@ -63,7 +63,9 @@
                                             <td><?php echo $row['donor_first'];?></td>
                                             <td><?php echo $row['donor_middle'];?></td>
                                             <td><?php echo $row['donor_last'];?></td>
-											<td><a href = "donor_profile.php?id=<?php echo $row['donor_id'];?>">View record</a></td>
+                                            <td><a class = "btn btn-success" href = "donor_profile.php?id=<?php echo $row['donor_id'];?>">View Profile</a>
+                                            <a class = "btn btn-info" href = "print.php?id=<?php echo $row['donor_id'];?>">View Record</a></td>
+											
                                         </tr> 
 									
 									

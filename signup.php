@@ -64,7 +64,7 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Gender*</label>
-           	<select name = "gender" class="form-control input-sm age">
+           	<select  class="form-control input-sm age" name = "gender">
            		<option selected="" disabled=""></option>
            		<option>Male</option>
            		<option>Female</option>

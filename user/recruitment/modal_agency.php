@@ -12,7 +12,27 @@
                                             <input class="form-control" name="name" required>
                                             <p class="help-block">Name of Agency</p>
                                         </div>
-                                       
+                                        <div class="form-group">
+                                            <label>Agency Address</label>
+                                            <input class="form-control" name="agency_address" required>
+                                            <p class="help-block">Address Of Agency Locates</p>
+                                        </div>
+                                         <div class="form-group">
+                                            <label>Agency Contact Number</label>
+                                            <input class="form-control" name="agency_contact_number" required>
+                                            <p class="help-block">Mobile/Phone Number</p>
+                                        </div>
+                                         <div class="form-group">
+                                            <label>Agency Contact Person</label>
+                                            <input class="form-control" name="agency_contact_person" required>
+                                            <p class="help-block">Person In Charged</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Positionb</label>
+                                            <input class="form-control" name="agency_contact_person_position" required>
+                                            <p class="help-block">Positon of Contact Person</p>
+                                        </div>
+                                           
                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
