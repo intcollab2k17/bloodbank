@@ -8,7 +8,7 @@
                                         <div class="modal-body">
                                         <form method = "POST" action = "update_exam.php" enctype ="multipart/form-data">
 												<div class="form-group">
-												<input type = "text" name = "did" value = "<?php echo $did;?>">
+												<input type = "hidden" name = "did" value = "<?php echo $did;?>">
 													<label>Blood Bag</label>
 													<select name = "blood_bag_type" class = "form-control">
 														<option></option>
@@ -19,7 +19,17 @@
 												</div>												
 												<div class="form-group">
 													<label>Segment Number</label>
-													<input class="form-control" name = "segment_number" Placeholder = "" required = "true"/>
+
+													<?php 		
+
+															$query = mysqli_query($con, "select * FROM blood_exam LEFT JOIN donation on donation.donation_id = blood_exam.donation_id");
+																$row=mysqli_fetch_array($query);
+															 	$rowcount=mysqli_num_rows($query);
+															 	if($rowcount == 0){
+															 		$rowcount = $row['segment_number']+1;
+															 		}	
+													?>
+													<input class="form-control" name = "segment_number" value = "000<?= $rowcount+1;?>" Placeholder = "" required = "true" />
 												</div> 
 												<div class="form-group">
 													<label>Time Started</label>
