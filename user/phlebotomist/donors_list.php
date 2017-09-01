@@ -46,7 +46,7 @@
                                     </thead>
                                     <tbody>
 									<?php	
-										$query1=mysqli_query($con,"select * from blood_exam LEFT JOIN donor ON donor.donor_id = blood_exam.donation_id ")or die(mysqli_error($con));
+										$query1=mysqli_query($con,"select * from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id")or die(mysqli_error($con));
 										while ($row=mysqli_fetch_array($query1)){
 											$id=$row['blood_exam_id'];										
 									?>  
