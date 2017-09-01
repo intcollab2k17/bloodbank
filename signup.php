@@ -31,7 +31,6 @@
 	text-decoration:none;
 }
 </style>
-
   </head>
   <body>
 <div class="panel panel-primary" style="margin:20px;">
