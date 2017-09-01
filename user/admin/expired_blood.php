@@ -83,6 +83,55 @@
             </div>
         </div>
        <!--END PAGE CONTENT -->
+        <div id="right">
+<?php
+    date_default_timezone_set("Asia/Manila"); 
+    $date = date("Y-m-d");
+    $expiring = date("Y-m-d",strtotime($date. " + 3 days")); 
+
+    $avail=mysqli_query($con,"select COUNT(*) as blood from blood_exam where expiry>='$date'")or die(mysqli_error($con));
+            $rowa=mysqli_fetch_array($avail);
+?>                     
+            <div class="well text-center">
+                <a class="quick-btn" href="available_blood.php">
+                    <i class="icon-tint icon-5x text-blue"></i>
+                        <span> Available </span>
+                        <span class="label label-success icon-2x" style="margin-right: -20px">
+                        <?php echo $rowa['blood'];?></span>
+                </a>
+            </div>
+
+<?php     
+    $date = date("Y-m-d");
+    $expiring = date("Y-m-d",strtotime($date. " + 3 days")); 
+    $querycount=mysqli_query($con,"select COUNT(*) as count from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE blood_exam.expiry <= '$expiring'")or die(mysqli_error($con));
+        $rowcount=mysqli_fetch_array($querycount);
+?>         
+            <div class="well text-center">
+                <a class="quick-btn" href="expired_blood.php">
+                    <i class="icon-tint icon-5x text-red"></i>
+                        <span> Expired Blood </span>
+                        <span class="label label-danger icon-2x" style="margin-right: -20px">
+                        <?php echo $rowcount['count'];?></span>
+                </a>
+            </div>
+<?php
+    $query=mysqli_query($con,"select COUNT(donor_id) as donor from donation natural join physical_exam group by donor_id")or die(mysqli_error($con));
+            $count=0;    
+            while($row=mysqli_fetch_array($query)){
+               $count=$count+1;
+            }
+?>                     
+            <div class="well text-center">
+                <a class="quick-btn" href="#">
+                    <i class="icon-user icon-5x text-red"></i>
+                        <span> Donors </span>
+                        <span class="label label-primary icon-2x" style="margin-right: -20px">
+                        <?php echo $count;?></span>
+                </a>
+            </div>
+            
+        </div>
           <!-- RIGHT STRIP  SECTION -->
         </div>
      <!--END MAIN WRAPPER -->
