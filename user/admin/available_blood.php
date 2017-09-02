@@ -84,8 +84,7 @@
             </div>
         </div>
        <!--END PAGE CONTENT -->
-             <div id="right">
-<?php
+             <div id="right"><?php
     date_default_timezone_set("Asia/Manila"); 
     $date = date("Y-m-d");
     $avail=mysqli_query($con,"select COUNT(*) as blood from blood_exam where expiry > '$date'")or die(mysqli_error($con));
@@ -104,13 +103,13 @@
  <?php     
     $date = date("Y-m-d");
     $expiring2 = date("Y-m-d",strtotime($date. " + 3 days")); 
-    $querycount2=mysqli_query($con,"select COUNT(*) as count2 from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE expiry <= '$expiring2'")or die(mysqli_error($con));
+    $querycount2=mysqli_query($con,"select COUNT(*) as count2 from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE expiry <= '$expiring2' AND  expiry >= '$date' ")or die(mysqli_error($con));
         $rowcount2=mysqli_fetch_array($querycount2);
 ?>         
 
 
             <div class="well text-center">
-                <a class="quick-btn" href="#">
+                <a class="quick-btn" href="threedays.php">
                     <i class="icon-tint icon-5x text-blue"></i>
                         <span> Expired in 3 Days </span>
                         <span class="label label-warning icon-2x" style="margin-right: -20px">
