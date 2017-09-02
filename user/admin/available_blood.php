@@ -113,7 +113,7 @@
                 <a class="quick-btn" href="#">
                     <i class="icon-tint icon-5x text-blue"></i>
                         <span> Expired in 3 Days </span>
-                        <span class="label label-danger icon-2x" style="margin-right: -20px">
+                        <span class="label label-warning icon-2x" style="margin-right: -20px">
                         <?php                         
 
                         echo $rowcount2['count2'];
@@ -133,7 +133,7 @@
                 <a class="quick-btn" href="expired_blood.php">
                     <i class="icon-tint icon-5x text-orange"></i>
                         <span> Expired Blood </span>
-                        <span class="label label-warning icon-2x" style="margin-right: -20px">
+                        <span class="label label-danger icon-2x" style="margin-right: -20px">
                         <?php echo $rowcount['count'];?></span>
                 </a>
             </div>
