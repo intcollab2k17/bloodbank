@@ -13,10 +13,10 @@
             <ul id="menu" class="collapse">                
                 <li class="panel active">
                     <a href="home.php" >
-                        <i class="icon-table"></i> Dashboard                       
+                        <i class="icon-table"></i> Daily Transactions                       
                     </a>                   
                 </li>
-                <li><a href="daily.php"><i class="icon-calendar"></i> Daily Transaction </a></li>
+              <!-- <li><a href="daily.php"><i class="icon-calendar"></i> Daily Transaction </a></li>-->
                 <li><a href="donors_list.php"><i class="icon-user"></i> Donors List </a></li>
                 <li><a href="programs.php"><i class="icon-calendar"></i> Programs </a></li>
                 <li><a href="agency.php"><i class="icon-calendar"></i> Agency </a></li>

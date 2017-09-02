@@ -66,6 +66,7 @@
                                             <td><?php echo $row['donor_middle'];?></td>  
                                             <td><?php echo $row['donor_last'];?></td>  
                                             <td><?php echo $row['donor_contact'];?></td>  
+                                           
                                         
                                             <td><?php echo $row['program'];?></td>  
                                             <td class="center">
