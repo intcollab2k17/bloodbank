@@ -2,6 +2,12 @@
  include 'session.php';
  include 'header.php';
  ?>
+ <style>
+ textarea.form-control.new {
+    height: auto;
+    width: 350px !important;
+}
+ </style>
 
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -137,7 +143,14 @@ function applyDataMask(field) {
     field.addEventListener('click', changed)
     field.addEventListener('keyup', changed)
 }
+
+
+
+
+
     </script>
+
+
 </body>
     <!-- END BODY-->
     

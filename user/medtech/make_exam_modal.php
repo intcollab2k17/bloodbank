@@ -35,7 +35,17 @@
 												</div>
 												<div class="form-group">
 													<label>HEENT</label>
-													<textarea class="form-control" name = "heent" Placeholder = "HEENT" required = "true"/></textarea
+													<!-- <textarea class="form-control" name = "heent" Placeholder = "HEENT" required = "true"/></textarea> -->
+													<select name = "heent" class = "form-control select-name" >
+  														<option disabled="true" visited>Choose Your Name</option>	
+  														<option>Unremarkable</option>
+ 														<option>Abnormal</option>
+													</select>
+													<label style="display:none; margin-top:10px;">Findings
+													<textarea class = "form-control new" name = "heent_remarks"></textarea> 
+													</label>
+ 															
+
 												</div>
 												<div class="form-group">
 													<label>Heart/Lungs</label>
