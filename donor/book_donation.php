@@ -61,6 +61,25 @@
 												</div>
 											</div>
 										</div>
+										<div class="form-group form-md-line-input has-success">
+											<label class="col-md-2 control-label" for="form_control_1">Blood Type</label>
+											<div class="col-md-3">
+												<div class="input-group">
+													<!-- <input type="text" class="form-control" name="blood_type" required> -->
+													<select name="blood_type" class = "form-control">
+													<option></option>
+													<option>A+</option>
+													<option>A-</option>
+													<option>B+</option>
+													<option>B-</option>
+													<option>AB+</option>
+													<option>AB-</option>
+													<option>O</option>
+													</select>
+													<span>Leave it blank if you dont know your blood type</span>
+												</div>
+											</div>
+										</div>
 										
 										<div class="form-group form-md-line-input">
 											<label class="col-md-2 control-label" for="form_control_1"></label>
