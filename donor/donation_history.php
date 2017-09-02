@@ -79,7 +79,7 @@
 								<tbody>
 <?php
 	$id=$_SESSION['id'];
-	$query=mysqli_query($con,"select * from donation where donor_id ='$id' order by donation_date desc")or die(mysqli_error($con));
+	$query=mysqli_query($con,"select * from donation LEFT JOIN physical_exam on physical_exam.donation_id  = physical_exam.donation_id  where donor_id ='$id' order by donation_date desc")or die(mysqli_error($con));
 			$i=1;
 			while($row=mysqli_fetch_array($query))
 			{
