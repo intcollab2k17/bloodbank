@@ -52,61 +52,52 @@ License: You must have a valid license purchased only from themeforest (the abov
   <link href="assets/frontend/onepage/css/style-responsive.css" rel="stylesheet">
   <link href="assets/frontend/onepage/css/themes/red.css" rel="stylesheet" id="style-color">
   <link href="assets/frontend/onepage/css/custom.css" rel="stylesheet">
+  	<link href='fullcalendar.min.css' rel='stylesheet' />
+	<link href='fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  		
+  	<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+ 	
   <!-- Theme styles END -->
-  
-  <style>
+ 
+
+ <?php 
+  		include 'dbConfig.php';
+
+
+ ?>
+ <script>
+    $(document).ready(function() {      
+      $('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,basicWeek,basicDay'
+			},			
+			navLinks: true, // can click day/week names to navigate views
+			editable: false,
+			eventLimit: true, // allow "more" link when too many events
+			events: [
+				
+				{
+					title: 'Long Event',
+					start: '2017-09-07',
+					end: '2017-09-10'
+				}
+				
+				
+			]
+		});
+
+
+
+      Layout.init();
+
+    });
+  </script>
+ <style>
 	a.scroll.site-logo > img {
     width: 61px;
 	}
-	#wrap {
-		width: 1100px;
-		margin: 0 auto;
-		}
-		
-	#external-events {
-		float: left;
-		width: 150px;
-		padding: 0 10px;
-		text-align: left;
-		}
-		
-	#external-events h4 {
-		font-size: 16px;
-		margin-top: 0;
-		padding-top: 1em;
-		}
-		
-	.external-event { /* try to mimick the look of a real event */
-		margin: 10px 0;
-		padding: 2px 4px;
-		background: #3366CC;
-		color: #fff;
-		font-size: .85em;
-		cursor: pointer;
-		}
-		
-	#external-events p {
-		margin: 1.5em 0;
-		font-size: 11px;
-		color: #666;
-		}
-		
-	#external-events p input {
-		margin: 0;
-		vertical-align: middle;
-		}
-
-	#calendar {
-/* 		float: right; */
-        margin: 0 auto;
-
-		background-color: #FFFFFF;
-		  border-radius: 6px;
-        box-shadow: 0 1px 2px #C3C3C3;
-		-webkit-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
--moz-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-		}
   </style>
  
   

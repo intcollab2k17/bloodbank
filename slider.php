@@ -65,10 +65,7 @@
               data-captionhidden="off"
               style="z-index: 6">We  <span>Donate</span> Blood
             </div>
-          </li>
-          <li data-transition="fade" data-slotamount="5" data-masterspeed="700" data-delay="9400" class="slider-item-3">
-            <img src="assets/frontend/onepage/img/silder/new.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-          </li>
+          </li>          
         </ul>
       </div>
     </div>
