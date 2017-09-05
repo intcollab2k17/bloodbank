@@ -60,11 +60,6 @@ License: You must have a valid license purchased only from themeforest (the abov
   <!-- Theme styles END -->
  
 
- <?php 
-  		include 'dbConfig.php';
-
-
- ?>
  <script>
     $(document).ready(function() {      
       $('#calendar').fullCalendar({
