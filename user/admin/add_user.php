@@ -12,8 +12,5 @@ include 'session.php';
 			VALUES('$username','$password','$user_last','$user_first','$user_middle','$user_type')")or die(mysqli_error($con));  
 			
 			echo "<script type='text/javascript'>alert('Data Successfully Saved!');</script>";
-			echo "<script>window.location='users.php'</script>";   
-	
-
-
+			echo "<script>window.location='users.php'</script>";
 ?>
