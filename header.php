@@ -62,26 +62,23 @@ License: You must have a valid license purchased only from themeforest (the abov
 
  <script>
     $(document).ready(function() {      
-      $('#calendar').fullCalendar({
-			header: {
+     var calendar = $('#calendar').fullCalendar({
+       header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month,basicWeek,basicDay'
+				right: 'month,agendaWeek,agendaDay,listWeek'
 			},			
 			navLinks: true, // can click day/week names to navigate views
 			editable: false,
-			eventLimit: true, // allow "more" link when too many events
-			events: [
-				
-				{
-					title: 'Long Event',
-					start: '2017-09-07',
-					end: '2017-09-10'
-				}
-				
-				
-			]
-		});
+			eventLimit: false,
+     	  events: {
+            url: 'calendar_data.php',
+            type: 'POST', // Send post data
+            error: function() {
+                alert('There was an error while fetching events.');
+            }
+        }
+    });
 
 
 
