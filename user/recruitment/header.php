@@ -42,6 +42,9 @@
       <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
       <link rel="stylesheet" href="../assets/plugins/timepicker/css/bootstrap-timepicker.min.css" />
       <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
+      <link href='fullcalendar.min.css' rel='stylesheet' />
+      <link href='fullcalendar.print.min.css' rel='stylesheet' media='print' />      
+      <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     
     
     <style>
@@ -49,4 +52,26 @@
             min-height:auto !important;
         }
     </style>
+
+    <script>
+             $(document).ready(function() {      
+           var calendar = $('#calendar').fullCalendar({
+             header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,agendaWeek,agendaDay,listWeek'
+            },      
+            navLinks: true, // can click day/week names to navigate views
+            editable: false,
+            eventLimit: false,
+              events: {
+                  url: 'calendar_data.php',
+                  type: 'POST', // Send post data
+                  error: function() {
+                      alert('There was an error while fetching events.');
+                  }
+              }
+          });
+      });
+    </script>
 </head>

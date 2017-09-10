@@ -31,7 +31,7 @@
                                         <div class="form-group">
                                             <label class="control-label" for="dp1">Date</label>
 
-                                                <input type="text" class="form-control" name = "date" data-date-format="mm/dd/yy" id="dp2" />                     
+                                                <input type="text" class="form-control" name = "date" data-date-format="yyyy-mm-dd" id="dp2" />                     
                                         </div>                                
 
 

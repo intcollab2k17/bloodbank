@@ -1,4 +1,4 @@
-<div class="modal fade" id="update<?=$row['program_id'];?>" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="update<?=$id;?>" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -22,15 +22,15 @@
                                             <select class="form-control" tabindex="4" name="city" required>
                                                 <?php
                                                     $query2=mysqli_query($con,"select * from city order by city_name")or die(mysqli_error());
-                                                            while($row=mysqli_fetch_array($query2)){
+                                                            while($row1=mysqli_fetch_array($query2)){
                                                 ?>
-                                                       <option value="<?php echo $row['city_id'];?>"><?php echo $row['city_name'];?></option>
-                                                                  <?php }?>
+                                                       <option value="<?php echo $row1['city_id'];?>"><?php echo $row1['city_name'];?></option>
+                                                <?php }?>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label" for="dp1">Date</label>
-                                                <input type="text" class="form-control" name = "date" value ="<?=$program_date;?>" />                     
+                                                <input type="date" class="form-control" name = "date" value ="<?=$program_date;?>" data-date-format="yyyy-mm-dd" id="dp2" />                     
                                         </div>                                
 
 
@@ -42,32 +42,18 @@
                                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label>Agency</label><br/>
-                                            <select class="form-control" id = "agency" tabindex="4" name="agency[]" multiple="multiple">
-
-                                                <?php
-                                                    $query2=mysqli_query($con,"select *,agency.agency_id as aid,linkages.agency_id as lid from agency  LEFT JOIN linkages ON linkages.agency_id = agency.agency_id WHERE program_id = '$id'")or die(mysqli_error());
-                                                            while($row=mysqli_fetch_array($query2)){
-                                                               if ($row['aid'] == $row['lid']){                                   
-                                                               $status="selected";     
-                                                               }
-                                                ?>
-                                                       <option value="<?php echo $row['agency_id'];?>" <?=$status;?>><?php echo $row['agency_name'];?></option>
-                                                         
-                                                <?php }?>
-
+                                            <select class="form-control" tabindex="4" name="agency[]" multiple="multiple">
                                                     <?php 
                                                         $query3=mysqli_query($con, "select * FROM agency")or die(mysqli_error());
                                                             while($row3=mysqli_fetch_array($query3)){
                                                                 $agency_id=$row3['agency_id'];
-
                                                     ?>
-                                                    <option value = "<?php echo $row3['agency_id'];?>"><?php echo $row3['agency_name'];?>                                                      
-                                                    </option>
+                                                     <option value = "<?php echo $row3['agency_id'];?>"><?php echo $row3['agency_name'];?></option>
                                                     <?php }?>
                                             </select>
-                                        </div>
+                                        </div> -->
                                         
                                         </div>
                                         <div class="modal-footer">

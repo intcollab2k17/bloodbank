@@ -90,6 +90,9 @@ License: You must have a valid license purchased only from themeforest (the abov
 	a.scroll.site-logo > img {
     width: 61px;
 	}
+  .fc-day-grid-event .fc-content{
+        white-space: normal !important;
+    }
   </style>
  
   
