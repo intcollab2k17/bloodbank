@@ -4,6 +4,7 @@ include('session.php');
  if (isset($_POST['update_exam']))
  { 
 	 $did = $_POST['did'];	
+	 $eid = $_POST['eid'];	
 	 $blood_bag_type = $_POST['blood_bag_type'];
 	 $segment_number = $_POST['segment_number'];
 	 $time_started = $_POST['time_started'];
@@ -19,7 +20,7 @@ include('session.php');
 
 
 
-	mysqli_query($con,"UPDATE physical_exam SET status='1'where exam_id='$did'")or die(mysqli_error($con)); 
+	mysqli_query($con,"UPDATE physical_exam SET status='1'where exam_id='$eid'")or die(mysqli_error($con)); 
 
 		echo "<script type='text/javascript'>alert('Successfully updated donation details!');</script>";
 		echo "<script>document.location='donors_list.php'</script>";

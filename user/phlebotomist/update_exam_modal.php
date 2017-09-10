@@ -9,6 +9,7 @@
                                         <form method = "POST" action = "update_exam.php" enctype ="multipart/form-data">
 												<div class="form-group">
 												<input type = "hidden" name = "did" value = "<?php echo $did;?>">
+												<input type = "hidden" name = "eid" value = "<?php echo $eid;?>">
 													<label>Blood Bag</label>
 													<select name = "blood_bag_type" class = "form-control">
 														<option></option>

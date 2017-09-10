@@ -49,6 +49,7 @@
 										$query1=mysqli_query($con,"select * from physical_exam natural join donation natural join donor where donation_date='$today' AND status = '0'")or die(mysqli_error($con));
 														while ($row=mysqli_fetch_array($query1)){
                                                             $did=$row['donation_id'];
+                                                            $eid = $row['exam_id'];
 									?>  
                                         <tr class="odd gradeX">
                                             <td><?php echo $row['donor_first']. " " .$row['donor_middle']. " " .$row['donor_last'];?></td>  

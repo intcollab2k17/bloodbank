@@ -32,7 +32,7 @@
                                     <thead>
                                         <tr>
                                             <th>Nationality</th>
-                                            
+                                            <th>Edit</th>                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -45,9 +45,34 @@
 									?>  
                                         <tr class="odd gradeX">
                                             <td><?=$row['nationality']?></td>
+                                            <td><a href="#update<?php echo $nationality_id;?>" class="btn btn-success" data-toggle = "modal" data-target="#update<?php echo $nationality_id;?>"><i class = "fa fa-pencil"></i> Edit</a></td>
 												
                                         </tr> 
-										<?php }?>									
+                            <div class="modal fade" id="update<?=$nationality_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="H2">Edit Nationality</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form method = "POST" action = "edit_nationality.php" enctype ="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label>Nationality</label>
+                                                    <input class="form-control" name = "nationality" value="<?=$row['nationality'];?>" required = "true"/>  
+                                                      <input type = "hidden" class="form-control" name = "nationality_id" value="<?=$row['nationality_id'];?>" required = "true"/>      
+                                                </div> 
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button name = "save_user" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                         </div>
+
+                                          <?php }?>									
                                     </tbody>
                                 </table>
                             </div>

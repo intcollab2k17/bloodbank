@@ -74,6 +74,9 @@
     </script>
 	
 	<style>
+     .fc-day-grid-event .fc-content{
+        white-space: normal !important;
+        }
 		.inner{
 			min-height:auto !important;
 		}
