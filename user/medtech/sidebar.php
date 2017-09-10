@@ -13,11 +13,11 @@
             <ul id="menu" class="collapse">                
                 <li class="panel active">
                     <a href="home.php" >
-                        <i class="icon-table"></i> Dashboard                       
+                        <i class="icon-table"></i> Daily Transaction                      
                     </a>                   
                 </li>
 
-               <li><a href="daily.php"><i class="icon-calendar"></i> Daily Transaction </a></li>
+              <!--  <li><a href="daily.php"><i class="icon-calendar"></i> Daily Transaction </a></li> -->
 
 
 

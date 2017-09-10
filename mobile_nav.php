@@ -16,7 +16,7 @@
             <li><a href="#services">Services</a></li>
 			<li><a href="#info">Info</a></li>
 			<li><a href="#message-block">Member area</a></li>
-			<li><a href="#team">Team</a></li>
+			<!-- <li><a href="#team">Team</a></li> -->
             <li><a href="#gallery">Location</a></li>        
            
           </ul>

@@ -10,7 +10,7 @@
 <body style = "background: url(../assets/frontend/onepage/img/blood.jpg) 0% 0% / cover;background-size: cover;background-repeat: no-repeat;">
    <div class="container">
     <div class="text-center">
-	<h1 class = "" style ="color:white;">Provincial Blood Bank Inventory System</h1>	
+	<h1 class = "" style ="color:white;">Web-Based Blood Bank Record System</h1>	
     </div>
 
         <div>

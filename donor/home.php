@@ -7,6 +7,7 @@
 
 <link type="text/css" rel="stylesheet" href="jscript/style.css"/>
 <script src="jscript/jquery.min.js"></script>
+
 <?php include('head.php');?>
 </head>
 <body class="page-boxed page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo">
@@ -31,10 +32,7 @@
 						<!-- BEGIN PORTLET-->
 								<h3 align="center">EVENT CALENDAR</h3>
 							<div  class = "porlet-body" style = "margin-left:138px;">
-									<?php
-									include_once('functions.php');
-									echo getCalender(); 
-									?>
+								<div id = "calendar"></div>									
 							</div>
 						<!-- END PORTLET-->
 					</div>						
@@ -60,6 +58,8 @@
 <script src="../assets/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
 <?php include('script.php');?>
+<script src="moment.min.js"></script>
+<script src="fullcalendar.js"></script>
 <script>
 	 $("#status").click(function(){
         $(".hideme").toggle('slow');

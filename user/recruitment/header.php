@@ -6,7 +6,7 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="UTF-8" />
-    <title>Provincial Blood Bank Inventory System </title>
+    <title>Web-Based Blood Bank Record System </title>
      <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />

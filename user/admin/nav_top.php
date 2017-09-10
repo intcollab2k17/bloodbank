@@ -9,7 +9,7 @@
 
                     <a href="index.html" class="navbar-brand">
                    <!-- <img src="assets/img/logo.png" alt="" />-->
-							Provincial Blood Bank Inventory System
+							Web-Based Blood Bank Record System
                         </a>
                 </header>
                 <!-- END LOGO SECTION -->				

@@ -31,7 +31,9 @@
     </div>
   </div>
  
-	<?php include 'team_block.php';?>
+	<?php 
+  //include 'team_block.php';
+  ?>
   <!-- Team block END -->
   <!-- Portfolio block BEGIN -->
   <?php include 'gallery.php';?>
@@ -41,12 +43,12 @@
     <div class="container">
       <div class="row">
         <!-- BEGIN COPYRIGHT -->
-        <div class="col-md-6 col-sm-6">
-          <div class="copyright">2014 © Metronic One Page. ALL Rights Reserved.</div>
+        <div class="col-md-12 col-sm-12">
+          <div style= "text-align: center;" class="copyright">2017 © Web-Based Blood Bank Record System.</div>
         </div>
         <!-- END COPYRIGHT -->
         <!-- BEGIN SOCIAL ICONS -->
-        <div class="col-md-6 col-sm-6 pull-right">
+        <!-- <div class="col-md-6 col-sm-6 pull-right">
           <ul class="social-icons">
             <li><a class="rss" data-original-title="rss" href="javascript:void(0);"></a></li>
             <li><a class="facebook" data-original-title="facebook" href="javascript:void(0);"></a></li>
@@ -57,7 +59,7 @@
             <li><a class="vimeo" data-original-title="vimeo" href="javascript:void(0);"></a></li>
             <li><a class="skype" data-original-title="skype" href="javascript:void(0);"></a></li>
           </ul>
-        </div>
+        </div> -->
         <!-- END SOCIAL ICONS -->
       </div>
     </div>

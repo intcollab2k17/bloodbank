@@ -99,11 +99,29 @@
     <script src="../assets/plugins/jquery-2.0.3.min.js"></script>
      <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <script src="../assets/js/input_mask.js"></script>
+    
     <!-- END GLOBAL SCRIPTS -->
+
+
+    <script>
+     $(document).ready(function(){
+        $('.name-heent').change(function(){
+            $selected_value=$('.name-heent option:selected').val();
+            if($('.name-heent option:selected').val() ==  'Abnormal' ){
+                $('.findings').show();
+            }
+            else{
+              
+            }
+        });
+    });
+    </script>
+    
     <?php include 'script.php';?>
 
-    <script type="text/javascript">
+    <script type="text/javascript">     
+
+
       Array.prototype.forEach.call(document.body.querySelectorAll("*[data-mask]"), applyDataMask);
 
 function applyDataMask(field) {
