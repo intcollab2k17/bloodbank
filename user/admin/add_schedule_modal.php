@@ -8,10 +8,9 @@
                                         <div class="modal-body">
                                         <form method = "POST" action = "add_schedule.php" enctype ="multipart/form-data">
 													<div class="form-group">
-														<label>Date</label>													
-															<input type="date" class="form-control" name = "date_start" id="dp2" />										
-													</div>	
-										
+														<label>Date Started</label>													
+															<input type="date" class="form-control" name = "date_start" id="dp2"  value = "<?=date("Y-m-d")?>" readonly/>										
+													</div>										
 													<div class="form-group">
 														<label>Date Ended</label>													
 															<input type="date" class="form-control" name = "date_end"  id="dp1" />										
@@ -20,14 +19,16 @@
 												 <div class="form-group">
 														<label>Time Started</label>														
 															<div class="input-group bootstrap-timepicker">
-																<input class="form-control timepicker-default" name = "time_start"type="text" />
+																<input class="form-control timepicker-default" name = "time_start" type ="text"  value = "<?php 
+																date_default_timezone_set("Asia/Manila");
+																echo date("h:i A")?>" readonly/>
 																	<span class="input-group-addon add-on"><i class="icon-time"></i></span>														
 															</div>
 												</div>
 												 <div class="form-group">
 														<label>Time Ended</label>														
 															<div class="input-group bootstrap-timepicker">
-																<input class="form-control timepicker-default" name = "time_end"type="text" />
+																<input type="time" class="form-control timepicker-default" name = "time_end" />
 																	<span class="input-group-addon add-on"><i class="icon-time"></i></span>														
 															</div>
 												</div>

@@ -9,16 +9,16 @@
                                         <form method = "POST" action = "add_user.php" enctype ="multipart/form-data">
 												<div class="form-group">
 													<label>Username</label>
-													<input class="form-control" name = "username" Placeholder = "Create a username.." required = "true"/>
+													<input  class="form-control" name = "username" Placeholder = "Create a username.." required = "true"/>
 													<p class="help-block">This username account is used for your log in </p>
 												</div>
 												<div class="form-group">
 													<label>Password</label>
-													<input class="form-control" id = "password1" name = "password" placeholder="Enter Password" />
+													<input type = "password" class="form-control" id = "password1" name = "password" placeholder="Enter Password" />
 												</div>
 												<div class="form-group">
 													<label>Confirm Password</label>
-													<input class="form-control" id = "password2" name = "" placeholder="Enter Password" /> 
+													<input type = "password" class="form-control" id = "password2" name = "" placeholder="Enter Password" /> 
 												</div>
 												<div class="form-group">
 													<label>Firstname</label>

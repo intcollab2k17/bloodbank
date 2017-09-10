@@ -48,6 +48,30 @@
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <link href='fullcalendar.min.css' rel='stylesheet' />
+    <link href='fullcalendar.print.min.css' rel='stylesheet' media='print' />
+        <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {      
+             var calendar = $('#calendar').fullCalendar({
+               header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay,listWeek'
+                    },          
+                    navLinks: true, // can click day/week names to navigate views
+                    editable: false,
+                    eventLimit: false,
+                  events: {
+                    url: 'calendar_data.php',
+                    type: 'POST', // Send post data
+                    error: function() {
+                        alert('There was an error while fetching events.');
+                    }
+                }
+            });
+         });
+    </script>
 	
 	<style>
 		.inner{

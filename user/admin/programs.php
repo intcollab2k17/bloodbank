@@ -53,10 +53,9 @@
 									?>  
                                         <tr class="odd gradeX">
                                             <td><?php echo $row['program'];?></td>
-                                            <td><?php echo $row['program_address'];?></td>
+                                            <td><?php echo $row['program_address'];?></td>                                         
                                            
-                                           
-<?php   
+                                    <?php   
                                             
                                     ?>                                         
         
@@ -99,19 +98,8 @@
                                     </form>
                                     </div>
                                 </div>
-                     </div>
-                   
-
-
-
-
-
-
-
-
-
-
-										<?php }?>									
+                         </div>
+                     <?php }?>									
                                     </tbody>
                                 </table>
                             </div>
@@ -123,6 +111,10 @@
                     </div>
                 </div>
                 <hr>
+                <div class = "col-lg-12 col-md-12 col-sm-12">
+                    <div id = "calendar"></div>
+                   
+                </div>
             </div>
         </div>
        <!--END PAGE CONTENT -->

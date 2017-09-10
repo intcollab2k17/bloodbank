@@ -73,7 +73,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input class="form-control" id = "password" name = "password" placeholder="Enter Password"  value = "<?=$row['password'];?>" />
+                                                    <input class="form-control" id = "password" name = "password" placeholder="Enter Password" type = "password"  value = "<?=$row['password'];?>" />
                                                 </div>                                               
                                                 <div class="form-group">
                                                     <label>Firstname</label>

@@ -20,6 +20,8 @@
 		<script src="../assets/plugins/autosize/jquery.autosize.min.js"></script>
 		<script src="../assets/plugins/jasny/js/bootstrap-inputmask.js"></script>
         <script src="../assets/js/formsInit.js"></script>
+        <script src="moment.min.js"></script>
+		<script src="fullcalendar.js"></script>
     
 		<script>
          $(document).ready(function () {

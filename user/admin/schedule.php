@@ -76,9 +76,9 @@
                                         </div>
                                         <div class="modal-body">
                                         <form method = "POST" action = "edit_schedule.php" enctype ="multipart/form-data">
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <input type = "text" name = "sched_id" value = "<?=$row['sched_id'];?>">
-                                                </div>
+                                                </div> -->
                                                 <div class="form-group">
                                                     <label>Date Start</label>
                                                     <input class="form-control" type = "date" name = "sched_date" value = "<?=$row['sched_date'];?>"/>

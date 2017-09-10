@@ -52,7 +52,7 @@ License: You must have a valid license purchased only from themeforest (the abov
   <link href="assets/frontend/onepage/css/style-responsive.css" rel="stylesheet">
   <link href="assets/frontend/onepage/css/themes/red.css" rel="stylesheet" id="style-color">
   <link href="assets/frontend/onepage/css/custom.css" rel="stylesheet">
-  	<link href='fullcalendar.min.css' rel='stylesheet' />
+  <link href='fullcalendar.min.css' rel='stylesheet' />
 	<link href='fullcalendar.print.min.css' rel='stylesheet' media='print' />
   		
   	<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
