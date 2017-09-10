@@ -18,7 +18,6 @@
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script src="../assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js"></script>
         <script src="../assets/plugins/autosize/jquery.autosize.min.js"></script>
-        
         <script src="../assets/js/formsInit.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 

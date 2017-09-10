@@ -111,7 +111,7 @@
                 $('.findings').show();
             }
             else{
-              
+               $('.findings').slideUp();
             }
         });
     });

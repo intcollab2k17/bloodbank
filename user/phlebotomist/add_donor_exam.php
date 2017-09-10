@@ -18,9 +18,9 @@ include 'dbcon.php';
 			mysqli_query($con,"INSERT INTO physical_exam(donor_id,weight,blood_pressure,pulse_rate,temp,gen_appearance,skin,heent,heart_lungs,remarks,volume,medical_officer,reasons_for_deferral,exam_status)	
 			VALUES('$donor_id','$weight','$blood_pressure','$pulse_rate','$temp','$gen_appearance', '$skin', '$heent', '$heart_lungs', '$remarks', '$volume','$medical_officer','$reasons_for_deferral', '1')")or die(mysqli_error($con)); 
 				
-			echo "<script type='text/javascript'>alert('Data Successfully Saved!');</script>";
+			/*echo "<script type='text/javascript'>alert('Data Successfully Saved!');</script>";
 			echo "<script>window.location='donors_list.php'</script>";   
-	
+	*/
 
 
 ?>
