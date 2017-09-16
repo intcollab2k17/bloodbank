@@ -152,7 +152,7 @@
           <!-- RIGHT STRIP  SECTION -->
         <div id="right">
             <div class="well well-small">
-                <button class="btn btn-success" data-toggle="modal" data-target="#buttonedModal">
+                <button class="btn btn-success btn-block" data-toggle="modal" data-target="#buttonedModal">
                                 Add Agency
                 </button>
             </div>
