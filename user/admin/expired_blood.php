@@ -87,9 +87,7 @@
 <?php
     date_default_timezone_set("Asia/Manila"); 
     $date = date("Y-m-d");
-    $expiring = date("Y-m-d",strtotime($date. " + 3 days")); 
-
-    $avail=mysqli_query($con,"select COUNT(*) as blood from blood_exam where expiry >='$expiring'")or die(mysqli_error($con));
+    $avail=mysqli_query($con,"select COUNT(*) as blood from blood_exam where expiry > '$date'")or die(mysqli_error($con));
             $rowa=mysqli_fetch_array($avail);
 ?>                     
             <div class="well text-center">
@@ -103,8 +101,8 @@
 
 <?php     
     $date = date("Y-m-d");
-    /*$expiring = date("Y-m-d",strtotime($date. " + 3 days")); */
-    $querycount=mysqli_query($con,"select COUNT(*) as count from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE blood_exam.expiry <= '$date'")or die(mysqli_error($con));
+    $expiring = date("Y-m-d",strtotime($date. "")); 
+    $querycount=mysqli_query($con,"select COUNT(*) as count from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE blood_exam.expiry = '$date'")or die(mysqli_error($con));
         $rowcount=mysqli_fetch_array($querycount);
 ?>         
             <div class="well text-center">

@@ -75,7 +75,7 @@
 													<label>Expiry</label>
 													<?php 
 														$date = date('Y-m-d');
-														$expiring = date("Y-m-d",strtotime($date. " + 30 days")); 	 
+														$expiring = date("Y-m-d",strtotime($date. " + 42 days")); 	 
 													?>
 													<input type  = "text" class="form-control" name = "expiry" id = "datepicker" Placeholder = "hematocrit" required = "true" value = "<?=$expiring;?>"/>
 

@@ -66,7 +66,7 @@
                                             <td><?php echo $row['blood_bag_type'];?></td>
                                             <td><?php echo $row['segment_number'];?></td>
                                             <td><?php echo date("F d, Y", strtotime($row['donation_date']));?></td>
-                                           <td> <?php echo date("l, F d, Y", strtotime($row['expiry']. '+ 30 days')); ?></td>
+                                           <td> <?php echo date("l, F d, Y", strtotime($row['expiry'])); ?></td>
 
                                         </tr> 
 										<?php }?>									
@@ -88,9 +88,7 @@
 <?php
     date_default_timezone_set("Asia/Manila"); 
     $date = date("Y-m-d");
-    $expiring = date("Y-m-d",strtotime($date. " + 3 days")); 
-
-    $avail=mysqli_query($con,"select COUNT(*) as blood from blood_exam where expiry >='$expiring'")or die(mysqli_error($con));
+    $avail=mysqli_query($con,"select COUNT(*) as blood from blood_exam where expiry > '$date'")or die(mysqli_error($con));
             $rowa=mysqli_fetch_array($avail);
 ?>                     
             <div class="well text-center">
@@ -104,8 +102,8 @@
 
 <?php     
     $date = date("Y-m-d");
-    $expiring = date("Y-m-d",strtotime($date. " + 3 days")); 
-    $querycount=mysqli_query($con,"select COUNT(*) as count from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE blood_exam.expiry <= '$expiring'")or die(mysqli_error($con));
+    $expiring = date("Y-m-d",strtotime($date. "")); 
+    $querycount=mysqli_query($con,"select COUNT(*) as count from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE blood_exam.expiry = '$date'")or die(mysqli_error($con));
         $rowcount=mysqli_fetch_array($querycount);
 ?>         
             <div class="well text-center">
@@ -116,19 +114,26 @@
                         <?php echo $rowcount['count'];?></span>
                 </a>
             </div>
-<?php
-    $query=mysqli_query($con,"select COUNT(donor_id) as donor from donation natural join physical_exam group by donor_id")or die(mysqli_error($con));
-            $count=0;    
-            while($row=mysqli_fetch_array($query)){
-               $count=$count+1;
-            }
-?>                     
+
+ <?php     
+    $date = date("Y-m-d");
+    $expiring2 = date("Y-m-d",strtotime($date. " -3 days")); 
+    $querycount2=mysqli_query($con,"select COUNT(*) as count2 from blood_exam LEFT JOIN donation ON donation.donation_id = blood_exam.donation_id LEFT JOIN donor ON donor.donor_id = donation.donor_id WHERE blood_exam.expiry >='$expiring2'")or die(mysqli_error($con));
+        $rowcount2=mysqli_fetch_array($querycount2);
+?>         
+
+
             <div class="well text-center">
                 <a class="quick-btn" href="#">
-                    <i class="icon-user icon-5x text-red"></i>
-                        <span> Donors </span>
-                        <span class="label label-primary icon-2x" style="margin-right: -20px">
-                        <?php echo $count;?></span>
+                    <i class="icon-tint icon-5x text-blue"></i>
+                        <span> Expired in 3 Days </span>
+                        <span class="label label-danger icon-2x" style="margin-right: -20px">
+                        <?php                         
+
+                        echo $rowcount2['count2'];
+
+
+                        ?></span>
                 </a>
             </div>
             
